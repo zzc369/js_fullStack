@@ -14,3 +14,5 @@ git checkout --filename 可以将文件还原到上一次在暂存区或是提�
 git reset HEAD filename 可以将提交到暂存区的文件撤回
 git rm 将删除的请求提交上去
 rm filename 删除文件
+git remote add origin + git上的源地址 
+git push -u origin master 将文件推送到origin(源)的master分支上
