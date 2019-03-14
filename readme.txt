@@ -12,3 +12,5 @@ HEAD -> master 表示当前的版本，类似于指针
 git reflog 将所有的版本都显示出来
 git checkout --filename 可以将文件还原到上一次在暂存区或是提交后的样子
 git reset HEAD filename 可以将提交到暂存区的文件撤回
+git rm 将删除的请求提交上去
+rm filename 删除文件
