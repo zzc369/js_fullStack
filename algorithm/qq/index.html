@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    var name = "安伟伟";
+    { //块级作用域
+        let man = "叶清";
+    }
+    var man = null;
+    // var man;
+    // 引用一个不再作用域里的变量，会报错，
+    console.log(window.man);
+</script>
+</body>
+</html>
