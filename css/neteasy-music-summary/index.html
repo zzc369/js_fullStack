@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>网易云音乐年度总结</title>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="shortcut icon"
+  href="//s1.music.126.net/style/favicon.ico">
+</head>
+<body>
+  <audio src="./bgm.mp3" id="bgm"
+  ></audio>
+  <div class="music-btn off"></div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        slide-1
+      </div>
+      <div class="swiper-slide">
+        <div class="view special">
+          <!-- 荡秋千 -->
+          <div class="art">
+            <div class="swing">
+              <!-- 腿 -->
+              <div class="leg2">
+                <div class="jiojio"></div>
+              </div>
+              <!-- 腿 -->
+              <div class="leg1">
+                <div class="jiojio"></div>
+              </div>
+              <!-- 脖子 -->
+              <div class="neck"></div>
+              <div class="head">
+                <div class="part"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        slide -3 
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+  <script>
+    const musicBtn = document
+    .querySelector('.music-btn');
+    const bgm = document.getElementById('bgm');
+    let defautMusicPlay = true;
+    musicBtn.addEventListener('click', () => {
+      if (defautMusicPlay) {
+        bgm.play();
+        // musicBtn.classList.remove('off');
+      } else {
+        bgm.pause();
+        // musicBtn.classList.add('off');
+      }
+      defautMusicPlay = !defautMusicPlay;
+      // 切换
+      musicBtn.classList.toggle('off');
+      // bgm.play();
+      // bgm.pause();
+    })
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+    })
+  </script>
+</body>
+</html>
