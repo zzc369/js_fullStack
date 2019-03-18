@@ -1,0 +1,18 @@
+.container, .page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.page__bd {
+    height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.tab {
+    display: none;
+}
+.tab.show{
+    display: block;
+}
