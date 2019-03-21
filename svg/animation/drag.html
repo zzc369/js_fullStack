@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>drag</title>
+</head>
+<body>
+  <svg class="volumn-controller" width="580" height="400" xmlns="http://www.w3.org/2000/svg" style="fill:none">
+    <path class="volumn-path" stroke="#000" d="m100,247c93,-128,284,-129 388,6"/>
+    <circle class="drag-button" r="12" cy="247" cx="100" stroke-width="1" stroke="#000" fill="#fff"/>
+  </svg>
+  <audio src="http://117.41.241.16/amobile.music.tc.qq.com/C400000kirTQ3OeqNJ.m4a?guid=2088829824&vkey=915EE78F542FAEAD95FA1976148C20DF739C43AFDC0BB2D10845FCBB656247692520CD5467B4089D87FE856A64581FA79BDCF4ADCEB630EA&uin=0&fromtag=66
+  " id="music" autoplay></audio>
+  <script>
+  let dragButton = document.querySelector('.drag-button');
+  let volumnController = document.querySelector('.volumn-controller');
+  let volumnPath = volumnController.querySelector('.volumn-path');
+  let dragButtonPos = dragButton.getBoundingClientRect();
+  console.log(dragButtonPos);
+  let music= document.getElementById('music');
+
+  let pathTotalLength = parseInt(volumnPath.getTotalLength());
+  console.log(pathTotalLength);
+  let points = [];
+  let startX = volumnPath.getPointAtLength(0).x;
+  for(let i= 0;i<pathTotalLength;i++){
+    //第几个点
+    let p = volumnPath.getPointAtLength(i);
+    // 点的Y，球的y坐标算出来
+    // Math.round(p.x) - startX 唯一
+    points[Math.round(p.x) - startX] = Math.round(p.y);
+  }
+
+  function movePoint(event) {
+    // 圆环是不动的，但是鼠标拖着他动，clientX ++
+    // 鼠标事件后的偏移量
+    // 便宜过后，圆环对应于path上的新的一个点，points y 的值 所在的新的位置
+    let diffX = event.clientX - Math.round(dragButtonPos.left +12);
+    diffX < 0 &&(diffX = 0);
+    diffX >= points.length && (diffX = points.length -1);
+    dragButton.setAttribute('cx',diffX + startX);
+    dragButton.setAttribute('cy',points[diffX]);
+    // 音量 分贝比例
+    let fb = (points[points.length-1]-points[diffX])/(points[points.length-1]-points[parseInt(points.length/2)]);
+    fb = fb >= 1 ?1:fb;
+    music.volume = fb;
+  }
+  dragButton.addEventListener('mousedown',function(event){
+    document.addEventListener('mousemove',movePoint);
+  })
+  document.addEventListener('mouseup',function(){
+    document.removeEventListener('mousemove',movePoint);
+  })
+  </script>
+</body>
+</html>
