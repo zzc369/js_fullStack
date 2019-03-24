@@ -1,0 +1,68 @@
+html {
+  font-size: 12px;
+  font-family: -apple-system sans-serif;
+  background-color: #f4f5f5;
+  text-rendering: optimizeLegibility;
+  color: #333;
+}
+body {
+  font-size: 12px;
+  margin: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+a.button {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.book-card {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto 12px;
+  position: relative;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+  background-color: #fff;
+}
+.book-bought {
+  display: flex;
+  align-items: center;
+  padding: 8px 22px 8px 15px;
+  border-top: 1px solid #ecf0f3;
+  cursor: pointer;
+}
+.book-bought .label {
+  color: #666;
+  font-weight: 400;
+  font-style: 16px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.book-bought .users {
+  height: 24px;
+  margin-left: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.book-bought .users .user {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-left: 10px;
+}
+.book-bought .users .user:first-child {
+  margin-left: 0px;
+}

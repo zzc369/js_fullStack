@@ -1,0 +1,82 @@
+$fz = 12px
+$bg_color = #f4f5f5
+$text_color = #333333
+$text_color_normal = #666666
+
+
+border-radius(num)
+  -webkit-border-radius num
+  -moz-border-radius num
+  -ms-border-radius num
+  -o-border-radius num
+  border-radius num
+
+
+html 
+  font-size $fz
+  font-family -apple-system sans-serif
+  background-color $bg_color
+  text-rendering optimizeLegibility
+  color $text_color
+
+body
+  font-size $fz
+  margin 0
+  overflow-y scroll
+  -webkit-overflow-scrolling touch
+  
+
+a.button 
+  border-radius(50%)
+
+.book-card
+  max-width 720px
+  width 100%
+  margin 0 auto 12px 
+  position relative
+  box-shadow 0 1px 2px 0 rgba(0,0,0,.15)
+  background-color #ffffff
+
+.book-bought
+  display flex
+  align-items center
+  padding 8px 22px 8px 15px
+  border-top 1px solid #ecf0f3
+  cursor pointer
+  .label
+    color $text_color_normal
+    font-weight 400
+    font-style 16px
+    display inline-flex
+    align-items center
+    flex-shrink 0
+    // justify-content flex-end  水平居中
+    // img
+    //   vertical-align middle
+  .users
+    height 24px
+    margin-left 24px
+    // flex 1
+    flex-grow 1
+    display flex
+    flex-wrap wrap
+    overflow hidden
+    .user
+      border-radius(50%)
+      flex-shrink 0
+      width 24px
+      height 24px
+      background-size cover
+      background-repeat no-repeat
+      background-position 50%
+      margin-left 10px
+      &:first-child
+        margin-left: 0px
+        
+      
+
+
+
+
+
+  

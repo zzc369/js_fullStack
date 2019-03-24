@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex 缩小</title>
+  <style>
+  #content {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: #666;
+    /* flex-wrap: wrap; */
+  }
+  #content div {
+    flex-basis:120px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, .2)
+  }
+  .box {
+    flex-shrink: 1;
+  }
+  .box1 {
+    flex-shrink: 2;
+  }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div class="box" style="background-color: red"></div>
+    <div class="box" style="background-color: yellow"></div>
+    <div class="box" style="background-color: blue"></div>
+    <div class="box1" style="background-color: brown"></div>
+    <div class="box1" style="background-color: green"></div>
+  </div>
+</body>
+</html>
