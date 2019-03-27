@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组 map</title>
+</head>
+<body>
+  <script>
+    const arr =[{name:'ECUT',good:false,},
+    {name:'江财',good:true,},
+    {name:'江财',good:true,}];
+    // for(let i = 0;i<arr.length;i++){
+    //   console.log('for',arr[i]);
+    // }
+    // arr.forEach(function(ele){
+    //   console.log('forEach',ele);
+    // });
+    //map 会返回一个新的数组，
+    //
+    const newArr = arr.map(function(ele){
+      return {
+        name:ele.name,
+        good:ele.good?'zhenhao':'aiguo'
+      }
+    });
+
+    const schools = ['ECUT','江财','南师'];
+    const newSchools = schools.map(school => {
+      return '<li>' +school +'</li>'
+    })
+
+    // newSchools = ['<li>ECUT</li>','<li>江财</li>','<li>南师</li>'];s
+
+  </script>
+</body>
+</html>

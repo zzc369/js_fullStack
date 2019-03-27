@@ -4,7 +4,7 @@
 }
 header {
   background: url(./images/mount.png) no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
 }
 header .mask {
   width: 100%;

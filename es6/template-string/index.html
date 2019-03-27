@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模板字符串</title>
+</head>
+<body>
+  <script>
+    const name = '韩梅梅';
+    const age = 18;
+    // const str = '我叫' +name +',我' + age +'岁';
+    //``中有换行符，，也会保留  其中可以放任意js对象
+    // const str = `我叫${name},
+    // 我${age}岁`;
+    const str = `我\`叫${name},我${age}岁，${1+1},${renderKeyword()}`;
+
+    function renderKeyword(){
+      return `<li>sing</li>
+              <li>game</li>`
+    }
+  </script>
+</body>
+</html>
