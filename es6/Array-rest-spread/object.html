@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>object</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      foo: 'foo val',
+      bar: 'bar val',
+      baz: 'baz val'
+    }
+    //es5
+    // var aa = obj.foo, bb=obj.bar;
+    //解构对象中的属性没有顺序要求
+    //解构赋值 foo: str1 解构后 foo将不存在，str1存在
+    const {foo: str1,baz} = obj;
+
+    const obj1 = {
+      p:['hello',{msg:'World'}]
+    }
+    const {p:[hello,world]}= obj1;
+
+  </script>
+</body>
+</html>
