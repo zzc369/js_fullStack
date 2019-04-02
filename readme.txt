@@ -25,3 +25,5 @@ git log --oneline --graph
 
 git rebase master
 git merge +分支名
+
+git cherry-pick 版本号  

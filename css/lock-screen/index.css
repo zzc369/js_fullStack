@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
 }
-html,
-body {
+html,body {
   width: 100%;
   height: 100%;
 }
@@ -13,7 +12,7 @@ body {
   overflow: hidden;
   background-image: url("https://images.unsplash.com/photo-1440613905118-99b921706b5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=255b304482a2f50d0917f3de7b06251e%27");
   background-repeat: no-repeat;
-  bachground-size: auto 100%;
+  background-size: auto 100%;
 }
 .page_hd {
   width: 1.866667rem /* 70/37.5 */;

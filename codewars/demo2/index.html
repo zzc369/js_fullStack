@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Number</title>
+</head>
+<body>
+  <script>
+    Number.prototype.add = function(num) {
+      // console.log('add');
+      return this + num;
+    }
+    Number.prototype.minus = function (num) {
+      return this - num;
+    }
+    Number.prototype.multiply = function (num) {
+      return this * num;
+    }
+    Number.prototype.devide = function (num) {
+      return this / num;
+    }
+    var numberObj = new Number(3);
+    // console.log(numberObj.__proto__);
+    console.log(numberObj.add(5).multiply(2));
+
+  </script>
+</body>
+</html>
