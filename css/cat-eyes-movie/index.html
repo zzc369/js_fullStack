@@ -46,10 +46,49 @@
                 </div>
               </div>
             </div>
+            <div class="movie-detail">
+              <p class="movie-type"></p>
+              <p class="address-time">
+                <span class="address"></span>
+                /
+                <span class="time"></span>分钟
+              </p>
+              <p class="date"></p>
+            </div>
+          </div>
+        </div>
+        <div class="operating flex">
+          <div class="movie-watch flex1">
+            <img src="./images/heart.png" alt="">
+            <span>想看</span>
+          </div>
+          <div class="movie-mark flex1">
+            <img src="./images/star2.png" alt="">
+            <span>评分</span>
           </div>
         </div>
       </div>
     </section>
+    <!-- section2 -->
+    <section class="section-seperate section-expander">
+      <div class="text-expander" id="text-expander">
+        <div class="text-expander__content close">
+          <p></p>
+        </div>
+        <div class="text-expander__button">
+          <i class="icon-chevron__down"></i>
+        </div>
+      </div>
+    </section>
+    <!-- toast -->
+    <div id="toast">
+      <div class="weui-mask_transparent"></div>
+      <div class="weui-toast">
+        <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+        <p class="weui-toast__content">已标记为想看</p>
+      </div>
+    </div>
+
   </div>
   <script>
     (function(){
@@ -58,12 +97,17 @@
         type: 'get',
         success:function(res){
           console.log(res)
-          // $('#moviePic').attr('src', res.data.moviePic)
+          // $('#moviePic').attr('src', res.data.moviePic);
           $('.movie-content .movie-name span').html(res.data.name);
           $('.movie-content .movie-ename span').html(res.data.nameEnglish);
           star(res.data.star);
           $('.rating-score').html(res.data.grade);
           $('.score-num span').html(res.data.people);
+          $('.movie-detail .movie-type').html(res.data.type);
+          $('.address-time .address').html(res.data.where);
+          $('.address-time .time').html(res.data.time);
+          $('.movie-detail .date').html(res.data.date);
+          $('.text-expander__content p').html(res.data.desc);
         }
       })
       function star(e) {
@@ -75,9 +119,34 @@
         for (let i = 0; i < num ; i++) {
           $('#rating').prepend('<img class="img" src="./images/star.png">')
         }
-        
+
       }
-      
+      $('.movie-watch').click(function(){
+        if($(this).hasClass('active')) {
+          $('.movie-watch').removeClass('active')
+          $('.movie-watch img').attr('src','./images/heart.png')
+          $('#toast .weui-toast__content').html('已取消想看')
+        }else{
+          $('.movie-watch').addClass('active')
+          $('.movie-watch img').attr('src','./images/heart1.png')
+          $('#toast .weui-toast_content').html('已标记为想看')
+        }
+        $('#toast').css('display','block')
+        setTimeout(() => {
+          $('#toast').css('display','none')
+        },1500)
+      })
+
+      //收放
+      $('#text-expander').on('click',function(){
+        if ($('.text-expander__content').hasClass('close')) {
+          $('.text-expander__content').removeClass('close')
+          $('.icon-chevron__down').addClass('up')
+        }else {
+          $('.text-expander__content').addClass('close')
+          $('.icon-chevron__down').removeClass('up')
+        }
+      })
     })()
   </script>
 </body>
