@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery源码解析 - 旅梦源码课</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  </style>
+  
+</head>
+<body>
+  <div id="root"></div>
+  <img src="https://pic.36krcnd.com/201904/09061934/9axl9yt10w5w6kq6!heading" alt="" onload="imgLoaded();">
+  <!-- <script src="https://cdn.bootcss.com/jquery/2.1.2/jquery.min.js"></script> -->
+  <script>
+    // 当html , css 很大的时候，需要时间等待
+    //http请求？ 有三个，本身，img script
+    function imgLoaded() {
+      console.log("图片加载完成");
+    }
+
+    window.onload = function() {
+      console.log("页面加载完成");
+    }
+    // document.addEventListener("DOMContentLoaded",function() {
+    //   console.log("DOM Ready");
+    //   // js开始的地方
+    // });
+    // jQuery的爱 API简约 更好的兼容性 DOMContentLoaded事件在IE中有兼容性问题
+      function jQueryEle(ele) {
+        this.ele = ele;
+      }
+      jQueryEle.prototype.html = function (str) {
+        this.ele.innerHTML = str;
+      }
+      function $(selector) {
+        if(typeof selector === 'function') {
+          document.addEventListener('DOMContentLoaded',selector);
+        }else if(typeof selector === 'string'){
+          // $ 现在是函数， 需要上面有html方法
+          // $('#root').html()
+          // querySelector(selector)
+          // 让html方法来自于节点对象
+          // $函数运行有返回值，是一个对象
+          const ele =document.querySelector(selector);
+          if(ele){
+            // jQueryEle对象
+            return new jQueryEle(ele);
+          }
+           return ele;
+        }
+      }
+      $(function() {
+        console.log('DOM Ready');
+        $('#root').html('<p>我要去云南</p>')
+      })
+
+  </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>司徒正美</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+  // 浏览器的页面渲染机制
+  // DOM Ready 事件
+  function JQueryEle(ele) {
+    this.ele = ele;
+  }
+  JQueryEle.prototype.html = function(str) {
+    this.ele.innerHTML = str;
+  }
+  const jQuery = {}; //命名空间 框架名字叫jQuery
+  jQuery.wrapper = function(ele) {
+    // ele querySelector innerHTML 没有html
+    // 将ele对象，封装于此
+    // jquery 里的结点对象, 不是简单的html结点，而是一个jquerynew 对象
+    const jqueryEle = new JQueryEle(ele);
+    return jqueryEle;
+  } 
+
+  function $(selector) {
+    if (typeof selector === 'function') {
+      document.addEventListener('DOMContentLoaded', selector);
+    } else if (typeof selector === 'string') {
+      // ? html(); 
+      // $ prototype html X 
+      // $() 函数  运行结果， 类型 prototype方法 
+      // ele上有html()
+      const ele = document.querySelector(selector);
+      if (ele) {
+        // 推论 
+        return  jQuery.wrapper(ele);
+      }
+      
+      // $('#root').html('')
+    }
+  }
+  $(function() {
+    console.log('DOM Ready');
+    $('#root')
+      .html('<p>我要去云南，我要去越南!</p>');
+  })
+  </script>
+</body>
+</html>
+ -->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+      xhr = new XMLHttpRequest();
+    } else {
+      xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    // false 将这次请求设置为同步操作
+    xhr.open("get","./mock.json",true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send();
+    // console.log(xhr.responseText);
+    //console.log(xhr.readyState, xhr.status);   返回 4 200
+    //定义异步调用 一定需要回调函数
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+      }
+    }
+    console.log(666);
+  </script>
+</body>
+</html>
