@@ -1,0 +1,44 @@
+.ui.hero {
+  background-color: #f0f0f0;
+}
+.ui.hero .item {
+  overflow: hidden;
+  position: relative;
+}
+.ui.hero .item .content {
+  display: flex;
+  align-items: center;
+  height: 696px;
+}
+.ui.hero .item .content .ui.container {
+  position: relative;
+  z-index: 2;
+}
+.ui.hero .item .header {
+  font-size: 48px;
+  font-weight: 500;
+  color: #000;
+  line-height: 67px;
+}
+.ui.hero .item .sub.header {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  line-height: 25px;
+  letter-spacing: 3px;
+}
+.ui.hero .item .description {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  line-height: 25px;
+}
+.ui.hero .item img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  height: 100%;
+  object-fit: cover;
+}

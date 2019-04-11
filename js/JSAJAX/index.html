@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <script>
     var xhr = null;
@@ -15,18 +17,52 @@
       xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
     // false 将这次请求设置为同步操作
-    xhr.open("get","./mock.json",true);
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.open("get", "./mock.json", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send();
     // console.log(xhr.responseText);
     //console.log(xhr.readyState, xhr.status);   返回 4 200
     //定义异步调用 一定需要回调函数
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText);
+    var p = new Promise((resolve, reject) => {
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          console.log(xhr.responseText);
+          resolve(xhr.responseText);
+        }
       }
+    })
+
+    function xq() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        console.log("猛哥要相亲了");
+        resolve('相亲很顺利！')
+        },1000)
+      })
     }
-    console.log(666);
+    // xq();
+    function marry() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("猛哥要结婚了");
+        }, 500)
+      })
+    }
+    // p
+    //   .then(xq)
+    //   .then(marry)
+    //   .catch(()=> {
+    //     console.log("猛哥出家了！");
+    //   })
+    // Promise.all([p,xq()]).then(marry).catch((err)=>{
+    //   console.log(err)
+    // })
+    Promise.race([p, xq(),marry()]).then((value) => {
+      console.log(value)
+    }).catch((err) => {
+      console.log(err)
+    })
   </script>
 </body>
+
 </html>
