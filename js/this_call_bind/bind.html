@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bind</title>
+</head>
+<body>
+
+  <script>
+    window.value = 2;
+    var foo = { //定义了一个对象字面量
+      value: 1
+    };
+    function bar() { // 定义了一个函数 生成期
+      // 生成不算，this 不算
+      // this 是在运行时决定的
+      alert(this.value);
+    }
+    //bar(); //普通函数 主动追
+    //bar.call(foo); //指定this 指向foo 相亲
+    // 童养媳 指定函数this 绑定foo，产生一个新函数，之后再运行的时候，this 就是被绑定的这个对象
+    var bindFoo = bar.bind(foo);
+    
+    setTimeout(() => {
+      bindFoo();
+    }, 2000);
+    // 1. 事件函数内部，this 会是事件发生的对象
+    // 2. 事件是异步的
+    // 3. bind
+
+    var bindWindowOnload = bar.bind(foo);
+    window.onload = bindWindowOnload;
+    //     window.onload = function() {
+    //   alert(this.value)
+    // }
+  </script>
+</body>
+</html>
