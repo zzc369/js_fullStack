@@ -2,6 +2,20 @@ html,
 body {
   width: 100%;
 }
+.movie-celebrities::-webkit-scrollbar,
+.movie-stages::-webkit-scrollbar {
+  height: 0 !important;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .flex {
   display: flex;
 }
@@ -45,7 +59,7 @@ body {
   display: inline-block;
 }
 .page {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   position: relative;
   z-index: 1;
   margin: 0;
@@ -56,13 +70,13 @@ body {
   font: 14px/1.5 Arial, Helvetica, sans-serif;
 }
 .page section {
-  background-color: #fff;
+  background: #fff;
   border-bottom: 1px solid #e5e5e5;
 }
 .page .movie-header {
-  border-bottom: none;
   padding: 0;
   background: #f8f8f8;
+  border-bottom: none;
 }
 .page .movie-header .movie {
   color: #fff;
@@ -75,26 +89,27 @@ body {
 }
 .page .movie-header .movie .movie-background,
 .page .movie-header .movie .movie-filter {
-  position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
+  width: 100%;
+  position: absolute;
   left: 0;
+  bottom: 0;
 }
 .page .movie-header .movie .movie-background {
   z-index: 0;
   filter: blur(0.6rem);
-  background-image: url("./images/header-bg.jpg");
+  -webkit-filter: blur(0.6rem);
   background-size: cover;
-  background-position-y: 40%;
   background-repeat: no-repeat;
+  background-position-y: 40%;
+  background-image: url("./images/header-bg.jpg");
 }
 .page .movie-header .movie .movie-filter {
   background-color: #40454d;
   opacity: 0.55;
 }
 .page .movie-header .movie .movie-container {
-  overflow: hidden;
   z-index: 1;
   position: relative;
 }
@@ -116,13 +131,13 @@ body {
 }
 .page .movie-header .movie .movie-container .movie-cover:after {
   content: '';
-  position: absolute;
   right: 0.1rem;
   bottom: 0.1rem;
-  width: 0.667rem;
-  height: 0.667rem;
   background-image: url("./images/bofang.png");
   background-size: 100% auto;
+  position: absolute;
+  width: 0.667rem;
+  height: 0.667rem;
   border-radius: 100%;
   opacity: 0.7;
 }
@@ -217,9 +232,9 @@ body {
   height: 10px;
   border: 1px solid #aaa;
   display: inline-block;
+  transform: rotateZ(45deg);
   border-width: 0 1px 1px 0;
   box-sizing: border-box;
-  transform: rotateZ(45deg);
   transition: transform 0.5s;
 }
 .page .section-expander .text-expander .text-expander__button .icon-chevron__down.up {
@@ -228,8 +243,8 @@ body {
 .page .section-seperate .movie-celebrities {
   width: 100%;
   padding: 0.3rem 0.3rem 0.1rem 0.3rem;
-  white-space: nowrap;
   overflow-x: scroll;
+  white-space: nowrap;
   box-sizing: border-box;
 }
 .page .section-seperate .movie-celebrities li {
@@ -248,14 +263,14 @@ body {
 .page .section-seperate .movie-celebrities li .link .movie-celebrities__pic img {
   width: 100%;
 }
-.page .section-seperate .movie-celebrities li .link span {
+.page .section-seperate .movie-celebrities span {
   display: block;
   font-size: 0.2rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.page .section-seperate .movie-celebrities li .link .movie-celebrities__roles {
+.page .section-seperate .movie-celebrities .movie-celebrities-roles {
   color: #999;
 }
 .page .movie-booking {
@@ -273,8 +288,9 @@ body {
   margin-top: 0.1rem;
 }
 .page .movie-photo .movie-photo__lists {
+  font-size: 0;
   width: 100%;
-  padding: 0.3rem 0.3rem 0.2rem;
+  padding: 0.3rem 0.3rem 0.2rem 0.3rem;
   overflow-x: scroll;
   white-space: nowrap;
   box-sizing: border-box;
@@ -299,6 +315,99 @@ body {
 }
 .page .movie-photo .movie-photo__lists .stage-img-container:last-child {
   margin-right: 0;
+}
+.page .pos_r {
+  position: relative;
+}
+.page .join-comment {
+  position: absolute;
+  font-size: 14px;
+  background-color: #e54847;
+  color: #fff;
+  padding: 0.1rem 0.3rem;
+  border-radius: 20px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.page .movie-comment {
+  overflow: hidden;
+  padding: 0.2rem 0 0.4rem 0;
+}
+.page .movie-comment .comment-item {
+  float: left;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 0.1rem 0.25rem;
+  margin-top: 0.2rem;
+  margin-right: 0.3rem;
+}
+.page .movie-comment .comment-item .commit-item__sort {
+  font-size: 0;
+}
+.page .movie-comment .comment-item .commit-item__sort span {
+  font-size: 14px;
+}
+.page .chosen-comment .chosen-comment__item .item-avatal {
+  float: left;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.page .chosen-comment .chosen-comment__item .item-avatal img {
+  width: 100%;
+}
+.page .chosen-comment .chosen-comment__item .item-detail {
+  overflow: hidden;
+  padding-left: 0.3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.4rem;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__hd div span {
+  vertical-align: middle;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__hd .lever {
+  display: inline-block;
+  width: 0.9735rem;
+  height: 0.4534rem;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__hd .lever img {
+  width: 100%;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__hd .item-score__desc {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__content {
+  margin: 0.15rem 0;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer {
+  margin-top: 0.4rem;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer .item-detail__time {
+  color: #9b9b9b;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer .pull-right {
+  float: right;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer .pull-right .link {
+  color: #757575;
+  border: 1px solid #eee;
+  margin-left: 0.3rem;
+  padding: 0.12rem 0.3rem 0.16rem;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer .pull-right .link .icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+.page .chosen-comment .chosen-comment__item .item-detail .item-detail__footer .pull-right .link span {
+  vertical-align: middle;
 }
 #toast {
   display: none;
