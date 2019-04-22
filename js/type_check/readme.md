@@ -24,3 +24,7 @@ Object? 祖先，顶级对象。函数才有prototype属性， ？？？？
 "[object object]"
 [object Array]  方法的执行方式可以被改变
 Object.prototype.toString.call(obj)
+
+js 有七个假值
+undefined null +0 -0 NaN "" false
+[] == ![] //true
