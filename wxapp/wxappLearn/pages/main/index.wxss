@@ -1,1 +1,5 @@
-/* pages/main/index.wxss */
+/**app.wxss**/
+.container {
+  height: 100%;
+  width: 100%;
+} 

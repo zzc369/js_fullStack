@@ -1,0 +1,4 @@
+<view class="map-box">
+  <map id="myMap" latitude="{{latitude}}" longitude="{{longitude}}"
+  show-location scale="{{scale}}" markers="{{markers}}"></map>
+</view>
