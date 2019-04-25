@@ -4,18 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"checkInvalidKey": true
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.5",
+	"libVersion": "2.6.6",
 	"appid": "wxb8bac4ef4efee9e7",
-	"projectname": "wxappLearn",
+	"projectname": "todos",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

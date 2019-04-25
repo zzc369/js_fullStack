@@ -13,9 +13,9 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.5",
+	"libVersion": "2.6.6",
 	"appid": "wxb8bac4ef4efee9e7",
-	"projectname": "wxappLearn",
+	"projectname": "neteasyCloudMusic",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

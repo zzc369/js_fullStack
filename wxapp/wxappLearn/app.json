@@ -6,11 +6,10 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#48A6FD",
-    "navigationBarTitleText": "zzc",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#48A6FA",
+    "navigationBarTitleText": "任天堂",
+    "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#515151",
     "backgroundColor": "#fff",
@@ -18,21 +17,23 @@
       {
         "pagePath": "pages/main/index",
         "text": "首页",
-        "iconPath": "images/shouye.png",
-        "selectedIconPath": "images/hover-shouye.png"
+        "iconPath": "pages/images/shouye.png",
+        "selectedIconPath": "pages/images/hover-shouye.png"
       },
       {
         "pagePath": "pages/lesson/index",
         "text": "课程",
-        "iconPath": "images/class.png",
-        "selectedIconPath": "images/hover-class.png"
+        "iconPath": "pages/images/class.png",
+        "selectedIconPath": "pages/images/hover-class.png"
       },
       {
         "pagePath": "pages/mine/index",
         "text": "我的",
-        "iconPath": "images/mine.png",
-        "selectedIconPath": "images/hover-mine.png"
+        "iconPath": "pages/images/mine.png",
+        "selectedIconPath": "pages/images/hover-mine.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json",
+  "enablePullDownRefresh": true
 }
