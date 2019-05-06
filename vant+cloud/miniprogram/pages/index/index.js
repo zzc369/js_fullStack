@@ -1,38 +1,49 @@
-// miniprogram/pages/user/user.js
-// 连上数据库
-const db = wx.cloud.database();
-// 找到userInfo 表
-const userInfo = db.collection('userInfo');
-
+// miniprogram/pages/index/index.js
+import Notify from '../dist/notify/notify';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    groupName: '',
+    newGroupModal: false
   },
+  onGroupNameChange(event) {
+    this.setData({
+      groupName: event.detail
+    })
+  },
+  // closeDialog() {
+  //   this.setData({
+  //     newGroupModal: false
+  //   })
+  // },
+  showNewGroupModal(){
+    this.setData({
+      newGroupModal: true
+    })
+  },
+  createGroup() {
+    let self = this;
+    if(self.data.groupName === ''){
+      Notify({
+        text: '起个名字吧',
+        duration: 1500,
+        selector: '#notify-selector',
+        backgroundColor: '#dc3545'
+      });
+      self.selectComponent('#new-group-modal').stopLoading();
+      return
+    }else {
 
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '数据加载中'
-    });
-    const _openid = options.id;
-    userInfo.where({
-      _openid: _openid
-    })
-    .get()
-    .then(res => {
-      console.log(res.data);
-      this.setData({
-        userInfo: res.data[0]
-      },res => {
-        wx.hideLoading();
-      })
-    })
+    
   },
 
   /**

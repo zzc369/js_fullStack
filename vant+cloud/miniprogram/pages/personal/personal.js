@@ -1,9 +1,4 @@
-// miniprogram/pages/user/user.js
-// 连上数据库
-const db = wx.cloud.database();
-// 找到userInfo 表
-const userInfo = db.collection('userInfo');
-
+// miniprogram/pages/personal/personal.js
 Page({
 
   /**
@@ -17,22 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '数据加载中'
-    });
-    const _openid = options.id;
-    userInfo.where({
-      _openid: _openid
-    })
-    .get()
-    .then(res => {
-      console.log(res.data);
-      this.setData({
-        userInfo: res.data[0]
-      },res => {
-        wx.hideLoading();
-      })
-    })
+
   },
 
   /**
