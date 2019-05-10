@@ -7,7 +7,61 @@ Page({
   data: {
     hasList: false,
     carts: [],
-    selectAllStatus: true
+    selectAllStatus: true,
+    totalPrice: 0
+  },
+  deleteList(e) {
+    const index = e.target.dataset.index;
+    let carts = this.data.carts;
+    carts.splice(index,1);
+    this.setData({
+      carts: carts
+    });
+    if(!carts.length) {
+      this.setData({
+        hasList: false
+      });
+    } else {
+      this.getTotalPrice();
+    }
+  },
+  minusCount(e) {
+    // console.log(e)
+    const index = e.target.dataset.index;
+    let carts = this.data.carts;
+    let num = carts[index].num;
+    if(num <= 1){
+      return
+    }
+    num = num -1;
+    carts[index].num = num;
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice();
+  },
+  addCount(e) {
+    const index = e.target.dataset.index;
+    let carts = this.data.carts;
+    let num = carts[index].num;
+    num = num +1;
+    carts[index].num = num;
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice();
+  },
+  getTotalPrice() {
+    let carts = this.data.carts;
+    let total = 0;
+    for(let i = 0; i < carts.length; i++) {
+      if(carts[i].selected) {
+        total += carts[i].num* carts[i].price;
+      }
+    }
+    this.setData({
+      totalPrice: total.toFixed(2)
+    })
   },
   selectAll(e) {
     let selectAllStatus = this.data.selectAllStatus;
@@ -47,6 +101,7 @@ Page({
           { id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 0.03, selected: true }
         ]
       })
+      this.getTotalPrice()
     }, 1000)
   },
 

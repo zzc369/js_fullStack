@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/cart/cart",
     "pages/category/category",
     "pages/index/index",
-    "pages/user/user"
+    "pages/orders/orders",
+    "pages/address/address"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,6 +54,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug":false,
+  "debug": false,
   "sitemapLocation": "sitemap.json"
 }

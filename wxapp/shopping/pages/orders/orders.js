@@ -1,80 +1,62 @@
-// pages/user/user.js
+// pages/orders/orders.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    thumb: '',
-    nickname: '',
-    orders: [],
     hasAddress: false,
-    address: {}
+    address: {},
+    orders: [
+      { id: 1, title: '新鲜芹菜 半斤', image: '/image/s5.png', num: 4, price: 3.40 },
+      { id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 2.60 }
+    ]
   },
-
+  toPay() {
+    wx.showModal({
+      title: '提示',
+      content: '付钱啦！'
+    })
+  },
+  getTotalPrice() {
+    let orders = this.data.orders;
+    let total = 0;
+    for(let i = 0; i < orders.length; i++) {
+        total += orders[i].num* orders[i].price;
+    }
+    this.setData({
+      total: total.toFixed(2)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let self = this;
-    wx.getUserInfo({
-      success: (result) => {
-        self.setData({
-          thumb: result.userInfo.avatarUrl,
-          nickname: result.userInfo.nickName
-        })
-      },
-      fail: () => {},
-      complete: () => {}
-    });
 
-    wx.request({
-      url: 'http://www.gdfengshuo.com/api/wx/orders.txt',
-      success (res)  {
-        self.setData({
-          orders: res.data
-        })
-      }
-    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getTotalPrice();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let self = this;
     wx.getStorage({
       key: 'address',
-      success: function(res) {
-        self.setData({
-          hasAddress: true,
-          address: res.data
+      success: result => {
+        this.setData({
+          address: result.data,
+          hasAddress: true
         })
-      }
-    });
-  },
-  payOrders() {
-    wx.requestPayment({
-      timeStamp: '',
-      nonceStr: '',
-      package: '',
-      signType: '',
-      paySign: '',
-      success: function(res){
-        
-      },
-      fail: function(res){
-        
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
