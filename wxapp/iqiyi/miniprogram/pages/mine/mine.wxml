@@ -1,0 +1,25 @@
+<!--miniprogram/pages/mine/mine.wxml-->
+<view class='minePage'>
+  <view class='container'>
+    <!-- 登录 -->
+    <view class='container-login'>
+      <image src='{{headPic}}' class='headPic' mode='aspectFit'></image>
+      <van-button type='primary' open-type='getUserInfo' round size='large' class='login'>登录</van-button>
+    </view>
+    <!-- 观看历史 -->
+    <view class='history'>
+      <text>观看历史</text>
+      <view>></view>
+    </view>
+    <!-- 我赞过的视频 -->
+    <view class='zan'>
+      <text>我赞过的视频</text>
+      <view>></view>
+    </view>
+    <!-- 设置 -->
+    <view class='config'>
+      <text>我赞过的视频</text>
+      <view>></view>
+    </view>
+  </view>
+</view>

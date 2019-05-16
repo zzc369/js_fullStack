@@ -13,5 +13,6 @@
     "scope.userLocation": {
       "desc": "你的位置用于当前位置的展示"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
