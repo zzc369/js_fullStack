@@ -1,5 +1,5 @@
 // miniprogram/pages/index/index.js
-import Notify from '../dist/notify/notify';
+import Notify from '../dist/notify/notify'
 Page({
 
   /**
@@ -24,19 +24,18 @@ Page({
       newGroupModal: false
     })
   },
-
   creatGroup() {
-    let self = this;
-    if(self.data.groupName === ''){
+    let self = this
+    if (self.data.groupName === '') {
       Notify({
         text: '起个名字吧',
         duration: 1500,
         selector: '#notify-selector',
         backgroundColor: '#dc3545'
       });
-      self.selectComponent('#new-group-modal').stopLoading();
+      self.selectComponent('#new-group-modal').stopLoading()
       return
-    }else {
+    } else {
       wx.cloud.callFunction({
         name: 'createGroup',
         data: {
@@ -65,11 +64,12 @@ Page({
       })
     }
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**

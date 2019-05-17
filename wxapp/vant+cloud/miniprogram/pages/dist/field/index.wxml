@@ -51,7 +51,6 @@
       confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
-      password="{{ password || type === 'password' }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"

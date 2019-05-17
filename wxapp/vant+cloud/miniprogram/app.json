@@ -38,7 +38,7 @@
   "usingComponents": {
     "van-button": "./pages/dist/button/index",
     "van-icon": "./pages/dist/icon/index",
-    "van-dialog":"./pages/dist/dialog/index",
+    "van-dialog": "./pages/dist/dialog/index",
     "van-field": "./pages/dist/field/index",
     "van-notify": "./pages/dist/notify/index"
   },

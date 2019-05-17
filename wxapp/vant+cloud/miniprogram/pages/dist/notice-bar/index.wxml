@@ -4,11 +4,9 @@
   style="color: {{ color }}; background-color: {{ backgroundColor }};"
   bind:tap="onClick"
 >
-  <image
-    wx:if="{{ leftIcon }}"
-    src="{{ leftIcon }}"
-    class="van-notice-bar__left-icon"
-  />
+  <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
+    <image src="{{ leftIcon }}" />
+  </view>
   <view class="van-notice-bar__content-wrap">
     <view class="van-notice-bar__content {{ scrollable ? '' : 'van-ellipsis' }}" animation="{{ animationData }}">
       {{ text }}

@@ -9,7 +9,6 @@ declare type DialogOptions = {
     overlay?: boolean;
     selector?: string;
     ariaLabel?: string;
-    className?: string;
     transition?: string;
     asyncClose?: boolean;
     businessId?: number;

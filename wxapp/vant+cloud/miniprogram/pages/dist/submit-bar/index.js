@@ -9,7 +9,6 @@ VantComponent({
     ],
     props: {
         tip: null,
-        tipIcon: String,
         type: Number,
         price: null,
         label: String,

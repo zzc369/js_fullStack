@@ -24,7 +24,6 @@ Dialog.defaultOptions = {
     message: '',
     zIndex: 100,
     overlay: true,
-    className: '',
     asyncClose: false,
     messageAlign: '',
     transition: 'scale',

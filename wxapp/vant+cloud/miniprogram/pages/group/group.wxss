@@ -1,5 +1,4 @@
 /* miniprogram/pages/group/group.wxss */
-
 page {
   height: 100%;
 }

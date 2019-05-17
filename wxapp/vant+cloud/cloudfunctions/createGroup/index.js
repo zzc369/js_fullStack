@@ -5,10 +5,10 @@ const env = 'zzc-g5qm0'
 cloud.init()
 // 获取服务器的句柄
 const db = cloud.database({ env })
+
 // 云函数入口函数
 exports.main = async (event, context) => {
   const userInfo = event.userInfo
-
   return await db.collection('group').add({
     data: {
       name: event.groupName,
@@ -18,5 +18,13 @@ exports.main = async (event, context) => {
       updateTime: new Date()
     }
   })
-  
+  .then(res => {
+    return db.collection('user-group').add({
+      data: {
+        groupId: res._id,
+        userId: userInfo.openId,
+        invalid: false
+      }
+    })
+  })
 }
