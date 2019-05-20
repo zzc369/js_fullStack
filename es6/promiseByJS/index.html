@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./promiseb.js"></script>
+  <script>
+    var a = 0;
+    var pro=new MyPromise((resolve,reject) => {
+      setTimeout(() => {
+        a = 1
+        resolve('ok')
+      }, 1000)
+    })
+    pro.then((res) => {
+      console.log(a)
+      console.log(res)
+    })
+  </script>
+</body>
+</html>

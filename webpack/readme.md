@@ -9,3 +9,6 @@
   集合起来
   WEBPACK
   前端构建工作
+
+  npm init -y 
+  nom run 
