@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/list/list",
     "pages/mine/mine",
     "pages/First-page/first",
-    "pages/hot/hot",
-    "pages/list/list"
+    "pages/hot/hot"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -16,9 +16,9 @@
     "color": "#b7b7b7",
     "selectedColor": "#AB956D",
     "backgroundColor": "#FFFFFF",
-    "list":[
+    "list": [
       {
-        "pagePath":"pages/First-page/first",
+        "pagePath": "pages/First-page/first",
         "text": "首页",
         "iconPath": "/images/aiqiyi.png",
         "selectedIconPath": "/images/aiqiyi2.png"
@@ -43,5 +43,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "pages/dist/button/index"
+  }
 }

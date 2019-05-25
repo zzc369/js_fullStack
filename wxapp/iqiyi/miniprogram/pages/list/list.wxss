@@ -1,1 +1,42 @@
 /* miniprogram/pages/list/list.wxss */
+.list-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.list {
+  width: 100%;
+  height: 75rpx;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: #F6F6F6;
+  border-bottom: 2rpx solid #E3E3E3;
+}
+.choose-list {
+  display: inline-block;
+  width: 16%;
+  height: 100%;
+  text-align: center;
+  line-height: 75rpx;
+}
+.list-page .list .arrow-box {
+  position: absolute;
+  right:0;
+  top:0;
+  overflow: hidden;
+  width: 10%;
+  height: 7%;
+  background-color: #F6F6F6;
+  border-left: 1px solid #E3E3E3
+}
+.list-page .list .arrow-box .down-arrow {
+  /* float: right; */
+  height: 25rpx;
+  width: 25rpx;
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  transform: rotate(45deg);
+  position: relative;
+  left:30%;
+  top: 25%;
+}

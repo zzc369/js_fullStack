@@ -1,2 +1,15 @@
 <!--miniprogram/pages/list/list.wxml-->
-<text>miniprogram/pages/list/list.wxml</text>
+<view class='list-page'>
+  <!-- 最上面的导航栏 -->
+  <view class='list'>
+    <view wx:for="{{list}}" wx:key="index" class='choose-list'>
+      {{item}}
+    </view>
+    <!-- 导航栏右边的朝下的箭头 -->
+    <view class="arrow-box">
+      <view class="down-arrow">
+      </view>
+    </view>
+  </view>
+
+</view>
