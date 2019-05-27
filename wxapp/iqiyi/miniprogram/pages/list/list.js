@@ -1,4 +1,5 @@
 // miniprogram/pages/list/list.js
+const db = require('../../assets/db.js')
 Page({
 
   /**
@@ -9,9 +10,17 @@ Page({
       '娱乐', '搞笑', '健康', '生活', '母婴',
       '脱口秀', '军事', '片花', '旅游', '时尚',
       '教育', '财经', '音乐', '汽车', '纪录片',
-      '体育', '儿童', '游戏', '科技',]
+      '体育', '儿童', '游戏', '科技',],
+    isShow: false,
+    active: 0,
+    content: db.data
   },
-
+  showAllSort() {
+    const isShow = !this.data.isShow;
+    this.setData({
+      isShow
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

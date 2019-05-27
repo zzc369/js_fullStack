@@ -6,10 +6,36 @@
       {{item}}
     </view>
     <!-- 导航栏右边的朝下的箭头 -->
-    <view class="arrow-box">
-      <view class="down-arrow">
+    <view class="arrow-box" bindtap='showAllSort'>
+      <view class=" {{isShow ? 'down-arrow up-Arrow': 'down-arrow'}} ">
       </view>
     </view>
   </view>
-
+  <!-- 点击向下箭头就会显示全部的分类 -->
+  <view wx:if="{{isShow}}" class='allSort'>
+    <view wx:for="{{list}}" wx:key="index" class='allSortShow'>
+      {{item}}
+    </view>
+  </view>
+  <!-- 下面的影片 -->
+  <view class='content'>
+    <van-tabs active="{{ active }}" animated>
+      <!--热度榜  -->
+      <van-tab title="热度榜">
+        <!-- 包裹着一个影视信息的小盒子 -->
+        <view class='information' wx:for="{{content}}" wx:key="index">
+          <image src='{{item.pic}}' mode='aspectFit' class='image'></image>
+          <view class='textDescription'>
+            <view class='name'>{{item.name}}</view>
+            <view class='description'>{{item.description}}</view>
+            <view class='hot'>热度 {{item.hot}}</view>
+          </view>
+        </view>
+      </van-tab>
+      <!--飙升榜  -->
+      <van-tab title="飙升榜">飙升榜</van-tab>
+      <!--播放指数榜  -->
+      <van-tab title="播放指数榜">播放指数榜</van-tab>
+    </van-tabs>
+  </view>
 </view>

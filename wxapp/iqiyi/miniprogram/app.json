@@ -45,6 +45,8 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-button": "pages/dist/button/index"
+    "van-button": "pages/dist/button/index",
+    "van-tab": "pages/dist/tab/index",
+    "van-tabs": "pages/dist/tabs/index"
   }
 }
