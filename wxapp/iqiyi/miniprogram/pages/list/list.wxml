@@ -33,9 +33,29 @@
         </view>
       </van-tab>
       <!--飙升榜  -->
-      <van-tab title="飙升榜">飙升榜</van-tab>
+      <van-tab title="飙升榜">
+        <!-- 包裹着一个影视信息的小盒子 -->
+        <view class='information' wx:for="{{content}}" wx:key="index">
+          <image src='{{item.pic}}' mode='aspectFit' class='image'></image>
+          <view class='textDescription'>
+            <view class='name'>{{item.name}}</view>
+            <view class='description'>{{item.description}}</view>
+            <view class='hot'>热度 {{item.hot}}</view>
+          </view>
+        </view>
+      </van-tab>
       <!--播放指数榜  -->
-      <van-tab title="播放指数榜">播放指数榜</van-tab>
+      <van-tab title="播放指数榜">
+        <!-- 包裹着一个影视信息的小盒子 -->
+        <view class='information' wx:for="{{content}}" wx:key="index">
+          <image src='{{item.pic}}' mode='aspectFit' class='image'></image>
+          <view class='textDescription'>
+            <view class='name'>{{item.name}}</view>
+            <view class='description'>{{item.description}}</view>
+            <view class='hot'>热度 {{item.hot}}</view>
+          </view>
+        </view>
+      </van-tab>
     </van-tabs>
   </view>
 </view>

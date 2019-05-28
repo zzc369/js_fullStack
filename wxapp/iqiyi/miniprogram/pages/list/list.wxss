@@ -63,10 +63,31 @@
  z-index: 1;
  width: 100%;
 }
+.list-page .content .information {
+  margin: 20rpx;
+  position: relative;
+}
 .list-page .content .information .image {
-  width: 300rpx;
+  height: 250rpx;
+  width: 30%;
   display: inline-block;
+  margin: 10rpx 25rpx 10rpx 10rpx;
 }
 .list-page .content .information .textDescription {
   display: inline-block;
+  position: absolute;
+  top: 15rpx;
+}
+.list-page .content .information .textDescription .name {
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+.list-page .content .information .textDescription .description {
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+  color: #999
+}
+.list-page .content .information .textDescription .hot {
+  font-size: 31rpx;
+  color: #999
 }
