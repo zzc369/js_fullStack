@@ -1,9 +1,9 @@
 {
   "pages": [
+        "pages/hot/hot",
     "pages/list/list",
     "pages/mine/mine",
-    "pages/First-page/first",
-    "pages/hot/hot"
+    "pages/First-page/first"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

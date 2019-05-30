@@ -1,1 +1,30 @@
 /* miniprogram/pages/hot/hot.wxss */
+.hotVideo {
+  width: 100%;
+}
+.hotVideo .video {
+  position: relative;
+}
+.hotVideo .video video{
+  width: 100%;
+  z-index: 5;
+}
+.hotVideo .video .title {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 10;
+  color: #fff;
+  font-weight: bold;
+}
+.hotVideo .video .userAvatar {
+  width: 75rpx;
+  height: 75rpx;
+  float: left;
+  margin: 20rpx 15px 40rpx 30rpx
+}
+.hotVideo .video .userNickName {
+  line-height: 125rpx;
+  font-size: 27rpx;
+  display: inline-block;
+}

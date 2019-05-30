@@ -24,5 +24,52 @@ module.exports= {
       description: '张雪迎乱世寻归宿',
       hot: '6717'
     },
+  ],
+  videoes: [
+    {
+      id: 1,
+      description: '发现神行完美非常适合法罗群岛上的极具挑战的地形与曲折的公路。',
+      video: 'https://resources.ninghao.net/landrover/norse-power-480-v3.mp4',
+      duration: '02:28',
+      userAvatar: '../../images/weidenglu.png',
+      userNickName: '法罗',
+      star:'5074'
+    },
+    {
+      id: 2,
+      description: 'Outside 的创始人 Larry Burke，带我们参观他在新墨西哥的牧场。',
+      video: 'https://resources.ninghao.net/landrover/the-outsider-480-v3.mp4',
+      duration: '03:00',
+      userAvatar: '../../images/weidenglu.png',
+      userNickName: '外来者',
+      star: '2096'
+    },
+    {
+      id: 3,
+      description: '驾驶在新奥尔良的街头，灵感无处不在。',
+      video: 'https://resources.ninghao.net/landrover/the-color-of-new-orleans-480.mp4',
+      duration: '01:33',
+      userAvatar: '../../images/weidenglu.png',
+      userNickName: '新奥尔良',
+      star: '1.6万'
+    },
+    {
+      id: 4,
+      description: '音乐制作人 Them Jeans，穿过洛杉矶的蔓延景观，为他的音乐寻找灵感。',
+      video: 'https://resources.ninghao.net/landrover/the-sound-of-los-angeles-480.mp4',
+      duration: '01:34',
+      userAvatar: '../../images/weidenglu.png',
+      userNickName: '洛杉矶',
+      star: '8871'
+    },
+    {
+      id: 5,
+      description: '开着敞篷版揽胜极光带你探索科罗拉多的山脉。',
+      video: 'https://resources.ninghao.net/landrover/welcome-winter-in-colorado-480.mp4',
+      duration: '01:19',
+      userAvatar: '../../images/weidenglu.png',
+      userNickName: '科罗拉多',
+      star: '1.9万'
+    },
   ]
 }

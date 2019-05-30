@@ -1,11 +1,12 @@
 // miniprogram/pages/hot/hot.js
+const db = require('../../assets/db.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    entities: db.videoes
   },
 
   /**
