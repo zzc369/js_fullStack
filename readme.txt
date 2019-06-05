@@ -27,3 +27,10 @@ git rebase master
 git merge +分支名
 
 git cherry-pick 版本号  
+
+
+// 终端
+	"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+	// "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+	// "terminal.integrated.shell.windows": "D:\\nodejs\\node.exe",
+	// "terminal.integrated.shell.windows": "D:\\Git\\bin\\bash.exe",
