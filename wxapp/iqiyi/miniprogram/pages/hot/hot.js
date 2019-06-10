@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    entities: db.videoes
+    entities: db.videoes,
+    star: '../../images/xin.png',
+    weixin: '../../images/weixin.png'
   },
 
   /**

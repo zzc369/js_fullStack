@@ -17,6 +17,11 @@
   color: #fff;
   font-weight: bold;
 }
+.hotVideo .video .infor{
+  height: 125rpx;
+  display: flex;
+  position: relative
+}
 .hotVideo .video .userAvatar {
   width: 75rpx;
   height: 75rpx;
@@ -27,4 +32,50 @@
   line-height: 125rpx;
   font-size: 27rpx;
   display: inline-block;
+}
+.hotVideo .video .infor .star {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 50%;
+  display: flex;
+}
+.hotVideo .video .infor .star .littleStar {
+  width: 30rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .star .hotStar {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.hotVideo .video .infor .share {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 20%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 75%;
+  display: flex;
+}
+.hotVideo .video .infor .share .weixin {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .share .wxshare {
+   line-height: 60rpx;
+   font-size: 30rpx;
 }

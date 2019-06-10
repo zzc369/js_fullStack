@@ -1,25 +1,23 @@
 <!--miniprogram/pages/hot/hot.wxml-->
 <view class='hotVideo'>
   <view class='video' wx:for="{{entities}}" wx:key="id">
-    <video src="{{ item.video}}" 
-    duration="{{item.duration }}"
-    object-fit="cover"
-    ></video>
-    <!-- 视频下面的用户信息以及视频热度和分享按钮 -->
+    <video src="{{ item.video}}" duration="{{item.duration }}" object-fit="cover"></video>
     <view class='title'>{{item.description}}</view>
-    <image src='{{item.userAvatar}}' class='userAvatar'
-      mode="aspectFit"></image>
-    <view class='userNickName'>{{item.userNickName}}</view>
-    <view class='star'>
-      <!-- 小心心 -->
-      <image ></image> 
-      <!-- 热度 -->
-    </view>
-    <!-- 分享按钮 -->
-    <view>
-      <!-- 微信图标 -->
-      <image></image>
-      <view>分享</view>
+    <!-- 视频下面的用户信息以及视频热度和分享按钮,用一个盒子来包裹这些信息 -->
+    <view class='infor'>
+      <image src='{{item.userAvatar}}' class='userAvatar' mode="aspectFit"></image>
+      <view class='userNickName'>{{item.userNickName}}</view>
+      <view class='star'>
+        <!-- 小心心 -->
+        <image src='{{star}}' class='littleStar' mode='aspectFit'></image>
+        <!-- 热度 -->
+        <view class='hotStar'>{{item.star}}</view>
+      </view>
+      <!-- 分享按钮 -->
+      <view class='share'>
+         <image src='{{weixin}}' class='weixin' mode='aspectFit'></image>
+         <view class='wxshare'>分享</view>
+      </view>
     </view>
   </view>
 </view>
