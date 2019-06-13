@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    comeTo('强哥','城区杠枪',(msg)=> {
+      console.log(msg);
+    })  
+    function comeTo(person,thing,cb) {
+      var msg = `${person},${thing}`
+      cb(msg)
+    }
+  </script>
+</body>
+</html>
