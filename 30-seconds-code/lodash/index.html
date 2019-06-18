@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lodash</title>
+</head>
+<body>
+  <script src="https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js"></script>
+  <script>
+    // string:
+    // 1. 转为小写 2. 拼接一个字符串 3. split 为一个数组
+    const lowCase = (str) => str.toLowerCase();
+    const add = str => `${str} hello world`
+    const splitStr = str => str.split(' ');
+    // 组合
+    const combineFun = _.compose(splitStr, add, lowCase);
+    console.log(combineFun('HEXO'));
+    // 函数式编程
+    // 管道
+    function pipe (...fns) {
+
+      return fns.reduce((prev, next) => {
+        return (...arg) => next(prev(...arg))
+      })
+    }
+    const pipeFun = pipe(lowCase,  add, splitStr)
+    console.log(pipeFun('HEXO'))
+  </script>
+</body>
+</html>
