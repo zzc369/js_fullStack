@@ -1,0 +1,24 @@
+yarn add hapi@16 mysql2 sequelize env2
+
+npm i sequelize-cli --dev
+
+.\node_modules\.bin\sequelize init
+
+.\node_modules\.bin\sequelize db:create
+
+.\node_modules\.bin\sequelize migration:create --name create-shop-table
+.\node_modules\.bin\sequelize seed:create --name init-shops
+
+.\node_modules\.bin\sequelize db:migrate
+
+.\node_modules\.bin\sequelize db:seed:all
+
+
+
+
+
+show databases;
+ use vhsop;
+ show tables;
+ describe goods;
+ select * from shops;
