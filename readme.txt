@@ -34,3 +34,8 @@ git cherry-pick 版本号
 	// "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
 	// "terminal.integrated.shell.windows": "D:\\nodejs\\node.exe",
 	// "terminal.integrated.shell.windows": "D:\\Git\\bin\\bash.exe",
+
+
+npm config set registry http://registry.npm.taobao.org/
+
+yarn config set registry http://registry.npm.taobao.org/
