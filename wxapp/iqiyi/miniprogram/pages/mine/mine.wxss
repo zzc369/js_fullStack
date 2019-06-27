@@ -19,8 +19,10 @@
 
 }
 .login {
-  position: relative;
-  left: 40%;
+  position: absolute;
+  left: 50%;
+  top: 23%;
+  transform: translate(-50%,0)
 }
 .skipTo {
   width: 100%;

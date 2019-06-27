@@ -35,6 +35,8 @@
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
     "mini-css-extract-plugin": "0.5.0",
+    "mobx": "^5.10.1",
+    "mobx-react": "^6.1.1",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -101,7 +103,10 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
     ],
-    "modulePaths": [],
+    "modulePaths": [
+      "/Users/zhaomeng/npm/lib/node_modules",
+      "/Users/zhaomeng/npm/lib/node_modules"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
@@ -125,7 +130,12 @@
   },
   "babel": {
     "plugins": [
-      ["@babel/plugin-proposal-decorators", { "legacy" : true }]
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
     ],
     "presets": [
       "react-app"

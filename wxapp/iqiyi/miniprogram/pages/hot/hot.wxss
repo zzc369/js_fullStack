@@ -37,7 +37,7 @@
   width: 150rpx;
   height: 60rpx;
   border: 1px solid #DDD;
-  border-radius: 20%;
+  border-radius: 42rpx;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -60,7 +60,7 @@
   width: 150rpx;
   height: 60rpx;
   border: 1px solid #DDD;
-  border-radius: 20%;
+  border-radius: 42rpx;
   position: absolute;
   top: 0;
   bottom: 0;

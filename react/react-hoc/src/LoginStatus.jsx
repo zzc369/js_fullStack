@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import WithLogin from './WithLogin'
+import withLogin from './WithLogin';
 
-@WithLogin
+@withLogin
 class LoginStatus extends Component {
   render() {
+    // if (!isLogin) {
+    //   return (
+    //     <button>需要登录</button>
+    //   )
+    // }
     return (
-      <div>
-        <button>已经登录</button>
-      </div>
+      <button>已经登录</button>
     );
   }
 }
-LoginStatus.displayName = 'LoginStatus'
+LoginStatus.displayName="LoginStatus";
 export default LoginStatus;

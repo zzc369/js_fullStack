@@ -1,10 +1,15 @@
-import React,{Component} from 'react';
-import WithLogin from './WithLogin'
+import React, { Component } from 'react';
+import withLogin from './WithLogin';
 
-@WithLogin
-class ShopCart extends Component{
+@withLogin
+class ShopCart extends Component {
   render() {
-    const {a, b} = this.props;
+    // if (!isLogin) {
+    //   return (
+    //     <button>需要登录</button>
+    //   )
+    // }
+    const { a, b } = this.props;
     return (
       <ul>
         <li>{a}</li>
@@ -12,8 +17,8 @@ class ShopCart extends Component{
         <li>手机</li>
         <li>平板</li>
       </ul>
-    )
+    );
   }
 }
-ShopCart.displayName = 'ShopCart'
+ShopCart.displayName = 'ShopCart';
 export default ShopCart;
