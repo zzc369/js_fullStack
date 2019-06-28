@@ -1,13 +1,16 @@
 {
   "pages": [
-        "pages/mine/mine",
     "pages/First-page/first",
+    "pages/mine/mine",
     "pages/hot/hot",
     "pages/list/list"
-
   ],
   "window": {
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#1e1e1e",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "爱奇艺视频",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
     "color": "#b7b7b7",
