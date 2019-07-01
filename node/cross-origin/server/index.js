@@ -3,6 +3,10 @@ const app = new Koa();
 const koaStatic = require('koa-static');
 const path = require('path');
 const router = require('koa-router')();
+
+app.use(koaStatic(
+  path.join(__dirname, './public/')
+))
 // res.set
 app.use(async (ctx, next) => {
   // 允许哪个域名请求 *
