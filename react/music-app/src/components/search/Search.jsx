@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-
 class Search extends Component {
-  render() {
-    return (
+  state = {  }
+  render() { 
+    return ( 
       <div>
-        Search
+        search
       </div>
-    );
+     );
   }
 }
-
+ 
 export default Search;
