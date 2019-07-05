@@ -1,0 +1,48 @@
+/* miniprogram/pages/mine/mine.wxss */
+.mine{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #EDEDED;
+}
+.mine .mine-header {
+  width: 100%;
+  position: relative;
+  padding-top: 100rpx;
+  padding-bottom: 50rpx;
+  background-color: #fff;
+}
+.mine .mine-header .header-img{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 0rpx auto 40rpx;
+}
+.mine .mine-header .button {
+  width: 300rpx;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #00FF50, #37DF6C);
+}
+.mine .box {
+  margin-top: 20rpx;
+  background-color: #fff;
+  position: relative;
+}
+.mine .box .title {
+  line-height: 100rpx;
+  margin-left: 30rpx;
+  font-weight: bold;
+}
+.right-arrow  {
+  width: 25rpx;
+  height: 25rpx;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  display: inline-block;
+  position: absolute;
+  right: 40rpx;
+  top: 50rpx; 
+  transform: rotate(45deg) translate(0,-50%)
+}

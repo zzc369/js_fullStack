@@ -1,0 +1,26 @@
+<!-- miniprogram/pages/mine/mine.wxml -->
+<view class='mine'>
+  <view class="mine-header">
+    <image class="header-img" src="{{showImg}}" width="100%" mode="aspectFit" />
+    <button type="primary" class="button" open-type="getUserInfo">登录</button>
+  </view>
+  <!-- 观看历史 -->
+  <view class="mine-history box">
+      <span class="title">观看历史</span>
+      <view class="right-arrow"></view>
+    <!-- 这里是观看历史的视频 -->
+    <view class=""></view>
+  </view>
+  <!-- 我赞过的视频 -->
+  <view class="mine-like box">
+    <span class="title">我赞过的视频</span>
+    <view class="right-arrow"></view>
+    <!-- 这里是我赞过的视频 -->
+    <view class=""></view>
+  </view>
+  <!-- 设置 -->
+  <view class="mine-setting box">
+    <span class="title">设置</span>
+    <view class="right-arrow"></view>
+  </view>
+</view>
