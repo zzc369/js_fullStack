@@ -1,1 +1,137 @@
 /* miniprogram/pages/ranking/ranking.wxss */
+.ranking {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.ranking .ranking-header {
+  width: 100%;
+  height: 80rpx;
+  background-color: #F6F6F6;
+  border-bottom: 2rpx solid #E3E3E3;
+}
+.ranking .ranking-header .header {
+  width: 90%;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.header::-webkit-scrollbar {
+  display: none;
+}
+.ranking .ranking-header .header .headerList {
+  display: inline-block;
+  margin: 0rpx 25rpx;
+  text-align: center;
+  line-height: 80rpx;
+  
+}
+.ranking .ranking-header .header .headerList.selected {
+  color: green;
+}
+.ranking .ranking-header .header-arrow {
+  position: absolute;
+  right:0;
+  top:0;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #F6F6F6;
+  border-left: 1px solid #E3E3E3
+}
+.ranking .ranking-header .header-arrow .down-arrow {
+  width: 25rpx;
+  height: 25rpx;
+  border-bottom: 2px solid #999;
+  border-right: 2px solid #999;
+  margin: 40rpx auto 0rpx;
+  transform: rotateZ(45deg) translate(-50%,-50%);
+  transition: transform 0.5s;
+}
+.ranking .ranking-header .header-arrow .down-arrow.up-arrow {
+  transform: rotateZ(-135deg) translate(25%,25%);
+}
+.ranking .ranking-header .header-sort {
+  width: 100%;
+  border-bottom: 1px solid #EFEFEF;
+  background-color: rgba(255, 255, 255,0.8);
+  position: absolute;
+  z-index: 5;
+  transition: opacity 3s;
+}
+
+.ranking .ranking-header .header-sort .headerSort {
+  width: 20%;
+  display: inline-block;
+  font-size: 25rpx;
+  text-align: center;
+  margin: 17rpx auto;
+  opacity: 0.8;
+}
+.ranking .ranking-container {
+  width: 100%;
+}
+.ranking .ranking-container .ranking-content {
+  width: 100%;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-left {
+  display: inline-block;
+  margin: 20rpx;
+  position: relative;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-left .image {
+  width: 270rpx;
+  height: 150rpx;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-left .list-number {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  font-size: 35rpx;
+  background-color: #FC2932;
+  width: 45rpx;
+  height: 45rpx;
+  padding-right: 10rpx;
+  text-align: center;
+  border-radius: 0 5rpx 45rpx 0;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-left .list-vip {
+  position: absolute;
+  top: 0rpx;
+  right: 5rpx;
+  font-size: 25rpx;
+  background-color: #E1B876;
+  color: #FFF;
+  padding: 0rpx 10rpx 5rpx;
+  border-radius: 0 0 10rpx 10rpx;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-left .list-count {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  font-size: 20rpx;
+  color: #fff;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-right {
+  display: inline-block;
+  position: relative;
+  top: -15rpx;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-right .list-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-right .list-desc {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  color: #999;
+}
+.ranking .ranking-container .ranking-content .ranking-list .list-right .list-hot {
+  font-size: 25rpx;
+  color: #999
+}

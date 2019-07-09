@@ -5,12 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showImg: "../../images/login.png"
+    userAvatar: "../../images/login.png",
+    isLogin: true,
+    nickname:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  bindgetuserinfo (e) {
+    console.log(e);
+    this.setData({
+      userAvatar: e.detail.userInfo.avatarUrl,
+      isLogin: !this.data.isLogin,
+      nickname: e.detail.userInfo.nickName
+    })
+  },
   onLoad: function (options) {
 
   },

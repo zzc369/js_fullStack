@@ -19,11 +19,20 @@
   height: 150rpx;
   display: block;
   margin: 0rpx auto 40rpx;
+  border-radius: 75rpx;
 }
 .mine .mine-header .button {
   width: 300rpx;
+  height: 45.6px;
   border-radius: 40px;
   background: linear-gradient(45deg, #00FF50, #37DF6C);
+}
+.mine .mine-header .nickname {
+  height: 45.6px;
+  font-size: 50rpx;
+  font-weight: bold;
+  line-height: 45.6px;
+  text-align: center;
 }
 .mine .box {
   margin-top: 20rpx;

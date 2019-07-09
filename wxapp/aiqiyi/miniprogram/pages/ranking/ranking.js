@@ -1,18 +1,55 @@
 // miniprogram/pages/ranking/ranking.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    headerList: [],
+    isShow: false,
+    programs: [],
+    currentIndex: 0
   },
-
+  showAllSort () {
+    this.setData({
+      isShow: !this.data.isShow
+    })
+  },
+  selected(e) {
+    console.log(e)
+    this.setData({
+      currentIndex: e.target.dataset.index,
+      isShow: false
+    })
+    e.currentTarget.offsetLeft = 0
+  },
   /**
    * 生命周期函数--监听页面加载
    */
+  // 将this.setData 放在 request 外面真是个错误的决定
   onLoad: function (options) {
-
+    let headerlist = [];
+    let programs = [];
+    self = this;
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5ca466a713e4cf68f04a42f7/js_fullStack/iqiyi',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function(res) {
+        // const headerlist = res.data.data.list.name
+        for (const ranking of res.data.data.ranking) {
+          headerlist.push(ranking.name);
+        }
+        programs =res.data.data.ranking[0].TVInfo;
+        self.setData({
+          headerList: headerlist,
+          programs : programs
+        })
+        
+      }
+    })
   },
 
   /**

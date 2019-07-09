@@ -1,8 +1,9 @@
 <!-- miniprogram/pages/mine/mine.wxml -->
 <view class='mine'>
   <view class="mine-header">
-    <image class="header-img" src="{{showImg}}" width="100%" mode="aspectFit" />
-    <button type="primary" class="button" open-type="getUserInfo">登录</button>
+    <image class="header-img" src="{{userAvatar}}" width="100%" mode="aspectFit" />
+    <button type="primary" class="button" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" wx:if="{{isLogin}}">登录</button>
+    <view wx:if="{{!isLogin}}" class="nickname">{{nickname}}</view>
   </view>
   <!-- 观看历史 -->
   <view class="mine-history box">

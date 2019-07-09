@@ -1,0 +1,24 @@
+{
+  "name": "spa-webpack",
+  "version": "1.0.0",
+  "description": "tree shaking\r 没用到的代码， 不会被打包",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-deep-scope-plugin": "^1.6.1"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.11"
+  }
+}

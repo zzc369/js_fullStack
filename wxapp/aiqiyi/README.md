@@ -10,3 +10,14 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+1. 将this.setData 放在 request 外面真是个错误的决定
+2. 将ranking页面顶部的滚动条隐藏
+  .ranking .ranking-header .header {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.header::-webkit-scrollbar {
+  display: none;
+}
