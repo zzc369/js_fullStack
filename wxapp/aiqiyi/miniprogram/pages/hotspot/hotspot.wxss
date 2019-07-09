@@ -1,1 +1,154 @@
-/* miniprogram/pages/hotspot/hotspot.wxss */
+/* miniprogram/pages/hot/hot.wxss */
+.hotVideo {
+  width: 100%;
+}
+.hotVideo .video {
+  position: relative;
+}
+.hotVideo .video video{
+  width: 100%;
+  z-index: 5;
+}
+.hotVideo .video .title {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  z-index: 10;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.hotVideo .video .infor{
+  height: 125rpx;
+  position: relative;
+  display: flex;
+}
+.hotVideo .video .infor .infor-left {
+  height: 100%;
+  display: flex;
+}
+.hotVideo .video .infor .infor-left .userAvatar {
+  width: 75rpx;
+  height: 75rpx;
+  margin: 20rpx 15px 30rpx 30rpx;
+  border-radius: 50%;
+  display: inline-block;
+}
+.hotVideo .video .infor .infor-left .userNickName {
+  display: inline-block;
+  line-height: 125rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.hotVideo .video .infor .infor-right {
+  flex: 1;
+  height: 100%;
+}
+.hotVideo .video .infor .infor-right .star {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 30%;
+  display: flex;
+}
+.hotVideo .video .infor .infor-right .star .littleStar {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .infor-right .star .hotStar {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.hotVideo .video .infor .infor-right .share {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 5%;
+  display: flex;
+}
+.hotVideo .video .infor .infor-right .share .wxLogo {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .infor-right .share .wxshare {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+/* .hotVideo .video .infor{
+  height: 125rpx;
+  position: relative
+}
+.hotVideo .video .userAvatar {
+  width: 75rpx;
+  height: 75rpx;
+  float: left;
+  margin: 20rpx 15px 40rpx 30rpx;
+  border-radius: 50%;
+}
+.hotVideo .video .userNickName {
+  line-height: 125rpx;
+  font-size: 27rpx;
+  display: inline-block;
+}
+.hotVideo .video .infor .star {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 50%;
+  display: flex;
+}
+.hotVideo .video .infor .star .littleStar {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .star .hotStar {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.hotVideo .video .infor .share {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: 75%;
+  display: flex;
+}
+.hotVideo .video .infor .share .weixin {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.hotVideo .video .infor .share .wxshare {
+   line-height: 60rpx;
+   font-size: 30rpx;
+} */

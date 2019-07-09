@@ -5,14 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    entities: [],
+    star: '../../images/xin.png',
+    likeStar: '../../images/xin2.png',
+    weixin: '../../images/weixin.png',
+    isLike: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  wxLike() {
 
+  },
+  wxShare() {
+
+  },
+  onLoad: function (options) {
+    let entities = [];
+    let self = this;
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5ca466a713e4cf68f04a42f7/js_fullStack/iqiyi',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function(res) {
+        // console.log(res);
+        entities = res.data.data.hotspot.videoes;
+        self.setData({
+          entities
+        })
+      }
+    })
   },
 
   /**

@@ -76,6 +76,9 @@
 .ranking .ranking-container .ranking-content {
   width: 100%;
 }
+.ranking .ranking-container .ranking-content .ranking-list {
+  display: flex;
+}
 .ranking .ranking-container .ranking-content .ranking-list .list-left {
   display: inline-block;
   margin: 20rpx;
@@ -117,7 +120,12 @@
 .ranking .ranking-container .ranking-content .ranking-list .list-right {
   display: inline-block;
   position: relative;
-  top: -15rpx;
+  top: 15rpx;
+  padding: 10rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
 }
 .ranking .ranking-container .ranking-content .ranking-list .list-right .list-title {
   font-size: 30rpx;
@@ -130,6 +138,8 @@
   font-size: 30rpx;
   margin-bottom: 20rpx;
   color: #999;
+  overflow: hidden;
+  text-overflow:ellipsis;
 }
 .ranking .ranking-container .ranking-content .ranking-list .list-right .list-hot {
   font-size: 25rpx;

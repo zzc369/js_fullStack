@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/ranking/ranking",
     "pages/hotspot/hotspot",
+    "pages/ranking/ranking",
     "pages/mine/mine",
     "pages/homepage/homepage"
   ],

@@ -17,12 +17,25 @@ Page({
     })
   },
   selected(e) {
-    console.log(e)
+    // console.log(e)
+    let programs = [];
     this.setData({
       currentIndex: e.target.dataset.index,
       isShow: false
+    });
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5ca466a713e4cf68f04a42f7/js_fullStack/iqiyi',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function(res) {
+        programs =res.data.data.ranking[self.data.currentIndex].TVInfo;
+        self.setData({
+          programs : programs
+        })
+        
+      }
     })
-    e.currentTarget.offsetLeft = 0
   },
   /**
    * 生命周期函数--监听页面加载
@@ -42,7 +55,7 @@ Page({
         for (const ranking of res.data.data.ranking) {
           headerlist.push(ranking.name);
         }
-        programs =res.data.data.ranking[0].TVInfo;
+        programs =res.data.data.ranking[self.data.currentIndex].TVInfo;
         self.setData({
           headerList: headerlist,
           programs : programs
