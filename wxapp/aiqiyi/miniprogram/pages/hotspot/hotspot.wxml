@@ -10,8 +10,8 @@
         <view class='userNickName'>{{item.userNickName}}</view>
       </view>
       <view class="infor-right">
-        <view class='star' bindtap="{{wxLike}}">
-          <image src='{{currentIndex === index && item.isLike ? likeStar : star}}' class='littleStar' mode='aspectFit'></image>
+        <view class='star' bindtap="wxLike">
+          <image src='{{item.isLike ? likeStar : star}}' class='littleStar' mode='aspectFit'></image>
           <view class='hotStar'>{{item.star}}</view>
         </view>
         <view class='share' bindtap="{{wxShare}}">

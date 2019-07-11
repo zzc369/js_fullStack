@@ -9,14 +9,18 @@ Page({
     star: '../../images/xin.png',
     likeStar: '../../images/xin2.png',
     weixin: '../../images/weixin.png',
-    isLike: false
+    isLike: false,
+    currentIndex: -1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  wxLike() {
-
+  wxLike(e) {
+    console.log(e)
+    this.setData({
+      currentIndex : e.currentTarget.dataset.index
+    })
   },
   wxShare() {
 

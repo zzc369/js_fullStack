@@ -17,7 +17,7 @@ Page({
     })
   },
   selected(e) {
-    // console.log(e)
+    console.log(e)
     let programs = [];
     this.setData({
       currentIndex: e.target.dataset.index,

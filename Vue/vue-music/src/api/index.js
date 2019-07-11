@@ -1,0 +1,43 @@
+import axios from 'axios'
+import Vue from 'vue'
+
+
+const vue = new Vue()
+
+axios.defaults.timeout = 10000
+axios.defaults.baseURL = 'http://localhost:3000'
+
+
+// 拦截器 ： 发送请求， 数据返回之前的操作
+axios.interceptors.response.use((res) => {
+    if (res.data.code !== 200) {
+        window.alert('网络异常')
+        return Promise.reject(res)
+    }
+    return res
+}, (error) => {
+    window.alert('网络异常')
+    return Promise.reject(error)
+})
+
+export function fetchGet(url, param) {
+    return new Promise((resolve, reject) => {
+        axios.get(url, {
+            params: param
+        })
+        .then(response => {
+            resolve(response.data)
+        }, err => {
+            reject(err)
+        })
+        .catch(error => {
+            reject(error)
+        })
+    })
+}
+
+export default {
+  Login(params) {
+      return fetchGet('/login', params)
+  }
+}
