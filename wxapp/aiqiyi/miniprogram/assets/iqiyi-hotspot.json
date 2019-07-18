@@ -1,0 +1,60 @@
+{
+  "hotspot": {
+    "videoes": [{
+        "id": 1,
+        "description": "发现神行完美非常适合法罗群岛上的极具挑战的地形与曲折的公路。",
+        "video": "https://resources.ninghao.net/landrover/norse-power-480-v3.mp4",
+        "duration": "02:28",
+        "userAvatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561804518959&di=ffe22870f0cdfceb6dde02aff4002f99&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D4001431513%2C4128677135%26fm%3D214%26gp%3D0.jpg",
+        "userNickName": "法罗",
+        "star": "5074",
+        "image": "https://resources.ninghao.net/landrover/welcome-winter-in-colorado-480.jpg",
+        "isLike": false
+      },
+      {
+        "id": 2,
+        "description": "Outside 的创始人 Larry Burke，带我们参观他在新墨西哥的牧场。",
+        "video": "https://resources.ninghao.net/landrover/the-outsider-480-v3.mp4",
+        "duration": "03:00",
+        "userAvatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561804518562&di=c1c200ada4b14f6e1a7fbe52420ccdd8&imgtype=0&src=http%3A%2F%2Fimages.liqucn.com%2Fimg%2Fh1%2Fh991%2Fimg201712091149430_info400X400.jpg",
+        "userNickName": "外来者",
+        "star": "2096",
+        "image": "https://resources.ninghao.net/landrover/the-sound-of-los-angeles-480.jpg",
+        "isLike": false
+      },
+      {
+        "id": 3,
+        "description": "驾驶在新奥尔良的街头，灵感无处不在。",
+        "video": "https://resources.ninghao.net/landrover/the-color-of-new-orleans-480.mp4",
+        "duration": "01:33",
+        "userAvatar": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=397591398,4256987058&fm=26&gp=0.jpg",
+        "userNickName": "新奥尔良",
+        "star": "4569",
+        "image": "https://resources.ninghao.net/landrover/the-color-of-new-orleans-480.jpg",
+        "isLike": false
+      },
+      {
+        "id": 4,
+        "description": "音乐制作人 Them Jeans，穿过洛杉矶的蔓延景观，为他的音乐寻找灵感。",
+        "video": "https://resources.ninghao.net/landrover/the-sound-of-los-angeles-480.mp4",
+        "duration": "01:34",
+        "userAvatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561804518560&di=97b968a1313d256aef4a8c1e6d42b37e&imgtype=0&src=http%3A%2F%2Fimages.liqucn.com%2Fimg%2Fh1%2Fh991%2Fimg201712091051570_info400X400.jpg",
+        "userNickName": "洛杉矶",
+        "star": "8871",
+        "image": "https://resources.ninghao.net/landrover/the-outsider-480.jpg",
+        "isLike": false
+      },
+      {
+        "id": 5,
+        "description": "开着敞篷版揽胜极光带你探索科罗拉多的山脉。",
+        "video": "https://resources.ninghao.net/landrover/welcome-winter-in-colorado-480.mp4",
+        "duration": "01:19",
+        "userAvatar": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561804518558&di=f0ca186d3f8e14307357f991539d6d81&imgtype=0&src=http%3A%2F%2Fimages.liqucn.com%2Fimg%2Fh1%2Fh991%2Fimg201712091150480_info400X400.jpg",
+        "userNickName": "科罗拉多",
+        "star": "8456",
+        "image": "https://resources.ninghao.net/landrover/norse-power-480.jpg",
+        "isLike": false
+      }
+    ]
+  }
+}

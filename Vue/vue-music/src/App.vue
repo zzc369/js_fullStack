@@ -13,17 +13,20 @@
 
       </router-view>
     </keep-alive>
+    <v-sidebar></v-sidebar>
   </div>
 </template>
 
 <script>
 import header from '@/components/header'
 import tab from '@/components/tab'
+import sidebar from '@/components/sidebar'
 export default {
   name: 'App',
   components: {
     'v-header': header,
-    'v-tab': tab
+    'v-tab': tab,
+    'v-sidebar': sidebar
   }
 }
 </script>

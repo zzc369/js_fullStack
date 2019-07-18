@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function* test () {
+      let a = yield 1;
+      console.log('a',a);
+      yield 2;
+      yield 3;
+    }
+    // 惰性 
+    var g = test();
+    let gn = g.next();
+    while(!gn.done) 
+    {
+      gn = g.next()
+    }
+
+    function* test1(){
+      let a = yield true;
+      console.log(a)
+      let b = yield false;
+      console.log(b)
+    }
+    autoRun(test1);
+    autoRun(test);
+    function autoRun (genFun) {
+      var g = genFun();
+      let gn = g.next();
+      while(!gn.done) {
+        gn = g.next(gn.value)
+      }
+    }
+
+    function autoRun1 (genFun) {
+      var g = genFun();
+      function next(value) {
+        let gn = g.next(value);
+        if(gn.done) return;
+        next(gn.value);
+      }
+      next()
+    }
+    autoRun1(test1)
+  </script>
+</body>
+</html>

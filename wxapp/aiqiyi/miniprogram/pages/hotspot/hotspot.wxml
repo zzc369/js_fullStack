@@ -1,7 +1,7 @@
 <!-- miniprogram/pages/hot/hot.wxml -->
 <view class='hotVideo'>
-  <view class='video' wx:for="{{entities}}" wx:key="{{index}}" data-index="{{index}}">
-    <video src="{{ item.video}}" duration="{{item.duration }}" object-fit="cover"></video>
+  <view class='video' wx:for="{{entities}}" wx:key="id" data-index="{{index}}">
+    <video src="{{ item.video}}" duration="{{item.duration }}" object-fit="cover" id="{{ item.id}}"  bindtap="handleVideoPlay" data-vid="{{item.id}}" ></video>
     <view class='title'>{{item.description}}</view>
     <!-- 视频下面的用户信息以及视频热度和分享按钮,用一个盒子来包裹这些信息 -->
     <view class='infor'>
@@ -10,7 +10,7 @@
         <view class='userNickName'>{{item.userNickName}}</view>
       </view>
       <view class="infor-right">
-        <view class='star' bindtap="wxLike">
+        <view class='star' bindtap="wxLike" data-index="{{index}}" >
           <image src='{{item.isLike ? likeStar : star}}' class='littleStar' mode='aspectFit'></image>
           <view class='hotStar'>{{item.star}}</view>
         </view>
@@ -21,4 +21,5 @@
       </view>
     </view>
   </view>
+  <van-notify id="van-notify" />
 </view>

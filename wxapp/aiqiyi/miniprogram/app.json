@@ -6,7 +6,7 @@
     "pages/homepage/homepage"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#595456",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1e1e1e",
     "navigationBarTitleText": "爱奇艺",
@@ -46,6 +46,7 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-tab": "dist/tab/index",
-    "van-tabs": "dist/tabs/index"
+    "van-tabs": "dist/tabs/index",
+    "van-notify": "dist/notify/index"
   }
 }
