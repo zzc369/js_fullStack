@@ -10,6 +10,16 @@ const app = express();
 const path = require('path');
 // /api
 const config = require('../nuxt.config.js');
+
+const requireAll = require('require-all');
+const routes = requireAll({
+  dirname: path.join(__dirname, './routes/'),
+  filter: /(.+)\.route\.js$/
+})
+for (const router of Object.values(routes)) {
+  app.use('/api',router)
+}
+
 const start = async () => {
   const nuxt = new Nuxt(config);
   if (true) {

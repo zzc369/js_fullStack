@@ -6,13 +6,20 @@ const db = cloud.database({ env })
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-
-  db.collection('wxLike').add({
-    data: {
-
-    }
-  })
-    .then(res => {
-      
+  if(event.isAdd) {
+    return db.collection('wxlike').add({
+      data: {
+        id: event.index,
+        Videoes:event.entity
+      }
     })
+      .then(res => {
+        console.log(res)
+      })
+  } else {
+    return db.collection('wxlike').where({
+      id: event.index
+    }).remove();
+  }
+  
 }

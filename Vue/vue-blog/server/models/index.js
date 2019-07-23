@@ -17,11 +17,10 @@ mongoose.connection.openUri(mongoUrl,{
 })
 .once('open', async () => {
   console.log('连接成功');
-  let user = new User({
-    role: 'superAdmin',
-    username: 'root',
-    password: '123456',
-    email: 'xxx@163.com',
+  const Article = mongoose.model('Article');
+  const article = new Article({
+    title: '欢迎使用blog',
+    content: '当你看到这篇文章时，我的分类法江东父老'
   });
-  user.save();
+  article.save();
 })

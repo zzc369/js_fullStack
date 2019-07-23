@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/hotspot/hotspot",
-    "pages/ranking/ranking",
+    "pages/homepage/homepage",
     "pages/mine/mine",
-    "pages/homepage/homepage"
+    "pages/hotspot/hotspot",
+    "pages/ranking/ranking"
   ],
   "window": {
     "backgroundColor": "#595456",
@@ -47,6 +47,7 @@
   "usingComponents": {
     "van-tab": "dist/tab/index",
     "van-tabs": "dist/tabs/index",
-    "van-notify": "dist/notify/index"
+    "van-notify": "dist/notify/index",
+    "van-search": "dist/search/index"
   }
 }

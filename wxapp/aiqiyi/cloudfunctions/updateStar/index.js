@@ -11,15 +11,12 @@ exports.main = async (event, context) => {
   })
   .get();
   let id = entities._id;
-  db.collection('iqiyi').doc(id).update({
+  return await db.collection('iqiyi').doc(id).update({
     data: {
       hotspot: {
         videoes:event.entities
       }
     }
+  }).then(res => {
   })
-  // let newEntities = await db.collection('iqiyi').where({
-  //   name: event.name
-  // }).get();
-  // return newEntities
 }

@@ -55,3 +55,31 @@
   top: 50rpx; 
   transform: rotate(45deg) translate(0,-50%)
 }
+.mine .box .videoes {
+  white-space: nowrap;
+  overflow-x: auto;
+  width: 100%;
+}
+.mine .box .videoes .video {
+  position: relative;
+  width: 300rpx;
+  display: inline-block;
+  margin-left: 30rpx;
+}
+.mine .box .videoes .video .coverImg {
+  width: 300rpx;
+  display: inline-block;
+}
+.mine .box .videoes .video .duration {
+  font-size: 30rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 55%;
+  color: #fff;
+}
+.mine .box .videoes .video .desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 5rpx 10rpx 10rpx;
+  font-size: 30rpx;
+}

@@ -1,2 +1,19 @@
-<!--miniprogram/pages/homepage/homepage.wxml-->
-<text>miniprogram/pages/homepage/homepage.wxml</text>
+<!-- miniprogram/pages/homepage/homepage.wxml -->
+<view class="homePage">
+  <view class="head">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}">
+      <block wx:for="{{imgUrl}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.img}}" mode="aspectFill" class="slide-image"></image>
+          <view class="desc">{{item.desc}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="header">
+      <image class="iqiyi" src="{{iqiyi}}" mode="widthFix" />
+      <view class="name">爱奇艺</view>
+      <!-- <van-search value="{{ value }}" placeholder="{{placeholder}}" class="input" shape="round" background="{{background}}" /> -->
+      <view class="input"></view>
+    </view>
+  </view>
+</view>

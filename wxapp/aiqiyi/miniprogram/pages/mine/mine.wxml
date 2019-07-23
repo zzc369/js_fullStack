@@ -2,22 +2,32 @@
 <view class='mine'>
   <view class="mine-header">
     <image class="header-img" src="{{userAvatar}}" width="100%" mode="aspectFit" />
-    <button type="primary" class="button" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" wx:if="{{isLogin}}">登录</button>
+    <button type="primary" class="button" open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo" wx:if="{{isLogin}}">
+      登录
+    </button>
     <view wx:if="{{!isLogin}}" class="nickname">{{nickname}}</view>
   </view>
   <!-- 观看历史 -->
   <view class="mine-history box">
-      <span class="title">观看历史</span>
-      <view class="right-arrow"></view>
+    <span class="title">观看历史</span>
+    <view class="right-arrow"></view>
     <!-- 这里是观看历史的视频 -->
     <view class=""></view>
   </view>
   <!-- 我赞过的视频 -->
   <view class="mine-like box">
-    <span class="title">我赞过的视频</span>
-    <view class="right-arrow"></view>
+    <view>
+      <span class="title">我赞过的视频</span>
+      <view class="right-arrow"></view>
+    </view>
     <!-- 这里是我赞过的视频 -->
-    <view class=""></view>
+    <scroll-view class="videoes" scroll-x="{{true}}">
+      <view class="video"  wx:for="{{videoes}}" wx:key="{{index}}">
+        <image class="coverImg" src="{{item.Videoes.image}}" mode="widthFix"></image>
+        <view class="duration">{{item.Videoes.duration}}</view>
+        <view class="desc">{{item.Videoes.description}}</view>
+      </view>
+    </scroll-view>
   </view>
   <!-- 设置 -->
   <view class="mine-setting box">

@@ -1,1 +1,47 @@
 /* miniprogram/pages/homepage/homepage.wxss */
+.homePage {
+  width: 100%;
+}
+.homePage .head {
+  position: relative;
+}
+.homePage .head .slide-image {
+  width: 100%;
+}
+.homePage .head .desc {
+  position: absolute;
+  left: 20rpx;
+  bottom: 30rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+  color: #ffffff
+}
+.homePage .head .header {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  display: flex
+}
+.homePage .head .header .iqiyi {
+  width: 75rpx;
+  display: inline-block;
+  top: 20rpx;
+  left: 10rpx;
+  margin: auto
+}
+.homePage .head .header .name {
+  font-size: 30rpx;
+  color: #2BFA39;
+  font-weight: bold;
+  display: inline-block;
+  margin: auto
+}
+.wx-swiper-dots {
+  position: relative;
+  left: unset !important;
+  right: 0;
+}
+
+.wx-swiper-dots.wx-swiper-dots-horizontal {
+  margin-bottom: -5rpx;
+}

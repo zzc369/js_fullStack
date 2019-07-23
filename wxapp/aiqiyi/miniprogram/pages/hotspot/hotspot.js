@@ -11,19 +11,19 @@ Page({
     likeStar: '../../images/xin2.png',
     weixin: '../../images/weixin.png',
     isLike: false,
-    name : 'hotspot',
+    name: 'hotspot',
     currentVideo: null,
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
-  handleVideoPlay (e) {
-    if(this.data.currentVideo) {
+  handleVideoPlay(e) {
+    if (this.data.currentVideo) {
       this.data.currentVideo.pause();
     }
     const Vid = e.target.id;
-    if(Vid) {
+    if (Vid) {
       const currentVideo = wx.createVideoContext(`${Vid}`);
       this.setData({
         currentVideo
@@ -31,19 +31,20 @@ Page({
       currentVideo.play();
     }
   },
-  updateStar(name,entities) {
+  updateStar(name, entities) {
+    // 把小红心点亮，并且往wxLike集合中添加数据
     wx.cloud.callFunction({
       name: 'updateStar',
       data: {
-        entities : entities,
+        entities: entities,
         name: name
       },
-      success: function(res) {
-        console.log('updateStar:',res)
-        
+      success: function (res) {
+        console.log('updateStar:', res)
+
       },
-      fail: function(error) {
-        console.log('updateStar:',error)
+      fail: function (error) {
+        console.log('updateStar:', error)
       }
     });
   },
@@ -54,52 +55,67 @@ Page({
       data: {
         name: name
       },
-      success: function(res) {
-        console.log('getData:' ,res)
+      success: function (res) {
+        // console.log('getData:' ,res)
         self.setData({
           entities: res.result.data[0].hotspot.videoes
         })
       },
-      fail: function(error) {
-        console.log('getData:' ,error)
+      fail: function (error) {
+        console.log('getData:', error)
+      }
+    })
+  },
+  cloudWXLike(index,entity,isAdd) {
+    wx.cloud.callFunction({
+      name: "wxLike",
+      data: {
+        index: index,
+        entity: entity,
+        isAdd: isAdd,
+      },
+      success: function(res) {
+        console.log('res',res)
+      },
+      fail: function(err) {
+        console.log('err',err)
       }
     })
   },
   wxLike(e) {
-    console.log(e)
     let self = this;
     let name = self.data.name
     let entities = this.data.entities;
     let isLike = entities[e.currentTarget.dataset.index].isLike;
     let index = e.currentTarget.dataset.index;
-    if(!isLike) {
+    if (!isLike) {
       entities[index].isLike = !isLike;
       entities[index].star = entities[index].star - 0 + 1;
-      console.log(entities)
       self.setData({
         entities
       })
-      const update = new Promise((resolve,reject) => {
-        self.updateStar(name,entities)
+      const update = new Promise((resolve, reject) => {
+        self.updateStar(name, entities,index)
         resolve('ok')
       })
       update.then(res => {
-        console.log('res:', res)
-        })
+        console.log(res)
+      })
+      self.cloudWXLike(index,entities[index],true)
     } else {
       entities[index].isLike = !isLike;
       entities[index].star = entities[index].star - 0 - 1;
-      console.log(entities)
       self.setData({
         entities
       })
-      const update = new Promise((resolve,reject) => {
-        self.updateStar(name,entities)
+      const update = new Promise((resolve, reject) => {
+        self.updateStar(name, entities)
         resolve('ok')
       })
       update.then(res => {
         console.log('res:', res)
-        })
+      })
+      self.cloudWXLike(index,entities[index],false)
     }
   },
   wxShare() {
@@ -128,7 +144,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -155,10 +171,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
     wx.showNavigationBarLoading()//在标题栏中显示加载
-     //模拟加载
-     setTimeout(function(){
+    //模拟加载
+    setTimeout(function () {
       wx.hideNavigationBarLoading()//完成停止加载
       wx.stopPullDownRefresh()//停止下拉刷新
       Notify({
@@ -168,8 +183,8 @@ Page({
         selector: '#van-notify',
         backgroundColor: '#ffffff'
       });
-    },1500)
-    
+    }, 1500)
+
   },
 
   /**

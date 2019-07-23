@@ -5,14 +5,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl: [],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 500,
+    indicatorColor: "rgba(0,0,0,0.5)",
+    indicatorActiveColor: "rgba(0,255,0,0.5)",
+    circular: true,
+    iqiyi: '../../images/aiqiyi2.png',
+    value: null,
+    placeholder: '亲爱的，热爱的',
+    background: 'rgba(201,201,201,0)'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let self = this;
+    wx.cloud.callFunction({
+      name: 'getData',
+      data: {
+        name: 'first'
+      },
+      success: function(res) {
+        console.log(res)
+        self.setData({
+          imgUrl: res.result.data[0].first.Header
+        })
+        console.log(self.data.imgUrl)
+      },
+      fail: function(err) {
+        console.log(err)
+      }
+    })
   },
 
   /**

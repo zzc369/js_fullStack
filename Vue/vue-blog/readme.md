@@ -11,3 +11,8 @@ index.html html的内容输出
   mvvm webpack  => .js => render => root (JS DOM)
   页面有一个加载的过程
   asyncData
+
+- nuxt 配置
+  nuxt.config.js
+  layout SEO
+  plugins: 

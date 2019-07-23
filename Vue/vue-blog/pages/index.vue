@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>Welcome!</h1>
-    <NLink to="/about">
-    About Pages
-    </NLink>
+    <div class="index container">
+      <base-list />
+    </div>
   </div>
 </template>
 
@@ -11,6 +10,9 @@
 export default {
   head: {
     title: 'Home Pages'
+  },
+  async fetch() {
+
   }
 }
 </script>
