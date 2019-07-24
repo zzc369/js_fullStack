@@ -14,9 +14,9 @@ Page({
     indicatorActiveColor: "rgba(0,255,0,0.5)",
     circular: true,
     iqiyi: '../../images/aiqiyi2.png',
-    value: null,
-    placeholder: '亲爱的，热爱的',
-    background: 'rgba(201,201,201,0)'
+    headerName: '爱奇艺',
+    searchName: '亲爱的，热爱的',
+    videoes: []
   },
 
   /**
@@ -32,9 +32,10 @@ Page({
       success: function(res) {
         console.log(res)
         self.setData({
-          imgUrl: res.result.data[0].first.Header
+          imgUrl: res.result.data[0].first.Header,
+          videoes: res.result.data[0].first.videoList
         })
-        console.log(self.data.imgUrl)
+        console.log(self.data.videoes)
       },
       fail: function(err) {
         console.log(err)

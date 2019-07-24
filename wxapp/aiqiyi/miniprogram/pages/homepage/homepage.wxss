@@ -4,6 +4,7 @@
 }
 .homePage .head {
   position: relative;
+  width: 100%;
 }
 .homePage .head .slide-image {
   width: 100%;
@@ -17,6 +18,7 @@
   color: #ffffff
 }
 .homePage .head .header {
+  width: 100%;
   position: absolute;
   top: 10rpx;
   left: 10rpx;
@@ -36,12 +38,67 @@
   display: inline-block;
   margin: auto
 }
+.homePage .head .header .searchBox {
+  flex: 1;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 42rpx;
+  margin: auto 30rpx;
+  height: 60rpx;
+  position: relative;
+}
+.homePage .head .header .searchBox .iconSearch {
+  margin: auto 20rpx;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%,-50%)
+}
+.homePage .head .header .searchBox .searchName {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #ffffff;
+  margin-left: 50%;
+  transform: translate(-50%,0)
+}
+
+
+.homePage .content {
+  width: 100%;
+}
+.homePage .content .contentVideoes .title {
+  font-size: 35rpx;
+  font-weight: bold;
+  margin: 25rpx 0 25rpx 25rpx;
+}
+.homePage .content .contentVideoes .container {
+  width: 100%;
+  display: flex;
+}
+.homePage .content .contentVideoes .container .video {
+  flex: 1;
+  display: inline-block;
+}
+.homePage .content .contentVideoes .container .video .topPart .img {
+}
+.homePage .content .contentVideoes .container .video .topPart .count {
+
+}
+.homePage .content .contentVideoes .container .video .topPart .vip {
+
+}
+.homePage .content .contentVideoes .container .video .downPart .videoTitle {
+
+}
+.homePage .content .contentVideoes .container .video .downPart .videoDesc {
+
+}
 .wx-swiper-dots {
   position: relative;
   left: unset !important;
-  right: 0;
+  right: -40rpx;
 }
 
 .wx-swiper-dots.wx-swiper-dots-horizontal {
   margin-bottom: -5rpx;
 }
+

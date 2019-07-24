@@ -11,9 +11,31 @@
     </swiper>
     <view class="header">
       <image class="iqiyi" src="{{iqiyi}}" mode="widthFix" />
-      <view class="name">爱奇艺</view>
-      <!-- <van-search value="{{ value }}" placeholder="{{placeholder}}" class="input" shape="round" background="{{background}}" /> -->
-      <view class="input"></view>
+      <view class="name">{{headerName}}</view>
+      <view class="searchBox">
+        <icon class="iconSearch" type="search" size="15" color="rgb(47,244,44)"></icon>
+        <view class="searchName">{{searchName}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="contentVideoes" wx:for="{{videoes}}" wx:key="index">
+      <!-- 板块标题 -->
+      <view class="title">{{item.listTitle}}</view>
+      <!-- 板块内容，四个内容 -->
+      <view class="container" wx:for="{{item.videoList}}" wx:key="index">
+        <view class="video">
+          <view class="topPart">
+            <image class="img" src="{{item.img}}" mode="aspectFit" />
+            <view class="count">{{item.count}}</view>
+            <view class="vip" wx:if="{{item.vip}}">VIP</view>
+          </view>
+          <view class="downPart">
+            <view class="videoTitle">{{item.title}}</view>
+            <view class="videoDesc">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </view>
