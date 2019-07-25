@@ -132,7 +132,6 @@
   font-weight: bold;
   margin-bottom: 15rpx;
   overflow:hidden;
-  text-overflow:ellipsis;
 }
 .ranking .ranking-container .ranking-content .ranking-list .list-right .list-desc {
   font-size: 30rpx;

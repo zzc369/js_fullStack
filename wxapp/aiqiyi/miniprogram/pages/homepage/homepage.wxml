@@ -2,12 +2,14 @@
 <view class="homePage">
   <view class="head">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}">
-      <block wx:for="{{imgUrl}}" wx:key="{{index}}">
+      <navigator url="../show/show" hover-class="none">
+        <block wx:for="{{imgUrl}}" wx:key="{{index}}">
         <swiper-item>
           <image src="{{item.img}}" mode="aspectFill" class="slide-image"></image>
           <view class="desc">{{item.desc}}</view>
         </swiper-item>
       </block>
+      </navigator>
     </swiper>
     <view class="header">
       <image class="iqiyi" src="{{iqiyi}}" mode="widthFix" />
@@ -23,10 +25,10 @@
       <!-- 板块标题 -->
       <view class="title">{{item.listTitle}}</view>
       <!-- 板块内容，四个内容 -->
-      <view class="container" wx:for="{{item.videoList}}" wx:key="index">
-        <view class="video">
+      <view class="contain">
+        <navigator class="video"  wx:for="{{item.videoList}}" wx:key="index" url="../show/show" hover-class="none">
           <view class="topPart">
-            <image class="img" src="{{item.img}}" mode="aspectFit" />
+            <image class="img" src="{{item.img}}" mode="widthFix" />
             <view class="count">{{item.count}}</view>
             <view class="vip" wx:if="{{item.vip}}">VIP</view>
           </view>
@@ -34,7 +36,7 @@
             <view class="videoTitle">{{item.title}}</view>
             <view class="videoDesc">{{item.desc}}</view>
           </view>
-        </view>
+        </navigator>
       </view>
     </view>
   </view>

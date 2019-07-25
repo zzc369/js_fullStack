@@ -65,32 +65,66 @@
 .homePage .content {
   width: 100%;
 }
+.homePage .content .contentVideoes {
+  padding-right: 15rpx;
+}
 .homePage .content .contentVideoes .title {
   font-size: 35rpx;
   font-weight: bold;
   margin: 25rpx 0 25rpx 25rpx;
 }
-.homePage .content .contentVideoes .container {
+.homePage .content .contentVideoes .contain {
   width: 100%;
-  display: flex;
 }
-.homePage .content .contentVideoes .container .video {
-  flex: 1;
+.homePage .content .contentVideoes .contain .video {
   display: inline-block;
+  width: 50%;
+  margin-bottom: 10px;
+  padding-left: 15rpx;
+  box-sizing: border-box
 }
-.homePage .content .contentVideoes .container .video .topPart .img {
+.homePage .content .contentVideoes .contain .video .topPart {
+  position: relative;
 }
-.homePage .content .contentVideoes .container .video .topPart .count {
-
+.homePage .content .contentVideoes .contain .video .topPart .img {
+  display: block;
+  width: 100%; 
 }
-.homePage .content .contentVideoes .container .video .topPart .vip {
-
+.homePage .content .contentVideoes .contain .video .topPart .count {
+  position: absolute;
+  right: 15rpx;
+  bottom: 15rpx;
+  font-size: 25rpx;
+  color: #fff;
 }
-.homePage .content .contentVideoes .container .video .downPart .videoTitle {
-
+.homePage .content .contentVideoes .contain .video .topPart .vip {
+  position: absolute;
+  top: 0rpx;
+  right: 20rpx;
+  font-size: 25rpx;
+  background-color: #E1B876;
+  color: #FFF;
+  padding: 0rpx 10rpx 5rpx;
+  border-radius: 0 0 10rpx 10rpx;
 }
-.homePage .content .contentVideoes .container .video .downPart .videoDesc {
-
+.homePage .content .contentVideoes .contain .video .downPart {
+  padding-right: 10rpx;
+}
+.homePage .content .contentVideoes .contain .video .downPart .videoTitle {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.homePage .content .contentVideoes .contain .video .downPart .videoDesc {
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .wx-swiper-dots {
   position: relative;
