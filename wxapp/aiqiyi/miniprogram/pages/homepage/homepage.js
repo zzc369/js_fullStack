@@ -18,7 +18,19 @@ Page({
     searchName: '亲爱的，热爱的',
     videoes: []
   },
-
+  navigate(e) {
+    const dataSet = e.currentTarget.dataset.set;
+    const item = JSON.stringify(dataSet);
+    console.log(item)
+    wx.navigateTo({
+      url: '../show/show?item=' + item
+    })
+  },
+  toSearch() {
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -11,6 +11,14 @@ Page({
     programs: [],
     currentIndex: 0
   },
+  navigate(e) {
+    const dataSet = e.currentTarget.dataset.set;
+    const item = JSON.stringify(dataSet);
+    console.log(item)
+    wx.navigateTo({
+      url: '../show/show?item=' + item
+    })
+  },
   showAllSort () {
     this.setData({
       isShow: !this.data.isShow

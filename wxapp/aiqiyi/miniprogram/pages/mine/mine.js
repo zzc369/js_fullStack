@@ -8,7 +8,7 @@ Page({
     userAvatar: "../../images/login.png",
     isLogin: true,
     nickname:'',
-    videoes: [1,2,3]
+    videoes: []
   },
   bindgetuserinfo (e) {
     console.log(e);
@@ -18,22 +18,6 @@ Page({
       nickname: e.detail.userInfo.nickName
     })
   },
-  // getVideo() {
-  //   let self = this;
-  //   wx.cloud.callFunction({
-  //     name: 'getVideo',
-  //     data: {},
-  //     success: function(res) {
-  //       console.log('mine-res',res);
-  //       self.setData({
-  //         videoes: res.result.data
-  //       })
-  //     },
-  //     fail: function(err) {
-  //       console.log('mine-err',err)
-  //     }
-  //   })
-  // },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -66,15 +50,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
-    // const video = new Promise((resolve,reject) => {
-    //   this.getVideo();
-    //   resolve('ok')
-    // })
-    // video.then(res => {
-    //   console.log(res)
-    //   console.log("this.data.videoes",this.data.videoes)
-    // })
     const self = this;
     wx.cloud.callFunction({
       name: 'getVideo',

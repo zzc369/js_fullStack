@@ -24,7 +24,7 @@
       <van-tab title="热度榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
-          <navigator class="ranking-list" url="../show/show" hover-class="none">
+          <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
               <image src="{{item.img}}"  mode='aspectFill' class='image' />
@@ -37,14 +37,14 @@
               <view class="list-desc">{{item.desc}}</view>
               <view class="list-hot">热度 {{item.hot}}</view>
             </view>
-          </navigator>
+          </view>
         </view>
       </van-tab>
       <!--飙升榜  -->
       <van-tab title="飙升榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
-          <navigator class="ranking-list" url="../show/show" hover-class="none">
+          <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
               <image src="{{item.img}}"  mode='aspectFill' class='image' />
@@ -57,14 +57,14 @@
               <view class="list-desc">{{item.desc}}</view>
               <view class="list-hot">热度 {{item.hot}}</view>
             </view>
-          </navigator>
+          </view>
         </view>
       </van-tab>
       <!--播放指数榜  -->
       <van-tab title="播放指数榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
-          <navigator class="ranking-list"  url="../show/show" hover-class="none">
+          <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
               <image src="{{item.img}}"  mode='aspectFill' class='image' />
@@ -77,7 +77,7 @@
               <view class="list-desc">{{item.desc}}</view>
               <view class="list-hot">热度 {{item.hot}}</view>
             </view>
-          </navigator>
+          </view>
         </view>
       </van-tab>
     </van-tabs>

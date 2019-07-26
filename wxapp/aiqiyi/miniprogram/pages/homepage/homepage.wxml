@@ -2,19 +2,19 @@
 <view class="homePage">
   <view class="head">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}">
-      <navigator url="../show/show" hover-class="none">
-        <block wx:for="{{imgUrl}}" wx:key="{{index}}">
-        <swiper-item>
-          <image src="{{item.img}}" mode="aspectFill" class="slide-image"></image>
-          <view class="desc">{{item.desc}}</view>
-        </swiper-item>
+      <block wx:for="{{imgUrl}}" wx:key="{{index}}">
+        <view bindtap="navigate" data-set="{{item}}">
+          <swiper-item>
+            <image src="{{item.img}}" mode="aspectFill" class="slide-image"></image>
+            <view class="desc">{{item.desc}}</view>
+          </swiper-item>
+        </view>
       </block>
-      </navigator>
     </swiper>
     <view class="header">
       <image class="iqiyi" src="{{iqiyi}}" mode="widthFix" />
       <view class="name">{{headerName}}</view>
-      <view class="searchBox">
+      <view class="searchBox" bindtap="toSearch">
         <icon class="iconSearch" type="search" size="15" color="rgb(47,244,44)"></icon>
         <view class="searchName">{{searchName}}</view>
       </view>
@@ -26,7 +26,7 @@
       <view class="title">{{item.listTitle}}</view>
       <!-- 板块内容，四个内容 -->
       <view class="contain">
-        <navigator class="video"  wx:for="{{item.videoList}}" wx:key="index" url="../show/show" hover-class="none">
+        <view class="video" wx:for="{{item.videoList}}" wx:key="index" bindtap="navigate" data-set="{{item}}">
           <view class="topPart">
             <image class="img" src="{{item.img}}" mode="widthFix" />
             <view class="count">{{item.count}}</view>
@@ -36,7 +36,7 @@
             <view class="videoTitle">{{item.title}}</view>
             <view class="videoDesc">{{item.desc}}</view>
           </view>
-        </navigator>
+        </view>
       </view>
     </view>
   </view>

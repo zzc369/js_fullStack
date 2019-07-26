@@ -1,27 +1,22 @@
-// miniprogram/pages/show/show.js
+// miniprogram/pages/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    entities: {},
-    img: '../../images/aiqiyi3.png',
-    star: '../../images/xin.png',
-    likeStar: '../../images/xin2.png',
-    weixin: '../../images/weixin.png',
+    placeholder: '亲爱的，热爱的'
   },
-
+  onCancel() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options',options);
-    const item = JSON.parse(options.item);
-    console.log('item',item);
-    this.setData({
-      entities : item
-    })
+
   },
 
   /**

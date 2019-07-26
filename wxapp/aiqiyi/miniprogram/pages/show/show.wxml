@@ -1,2 +1,20 @@
-<!--miniprogram/pages/show/show.wxml-->
-<text>miniprogram/pages/show/show.wxml</text>
+<!-- miniprogram/pages/show/show.wxml -->
+<view class="showPage">
+  <video src="{{entities.video}}" object-fit="cover" class="video"></video>
+  <button class="btn" type="primary">
+    <image class="img" src="{{img}}" mode="widthFix" />
+    <view class="content">打开爱奇艺，观看最新娱乐热点</view>
+  </button>
+  <view class="desc">{{entities.desc}}</view>
+  <view class="hot">热度: {{entities.hot}}</view>
+  <view class="btnBox">
+    <view class='star' bindtap="wxLike">
+      <image src='{{item.isLike ? likeStar : star}}' class='littleStar' mode='aspectFit'></image>
+      <view class='hotStar'>{{entities.hot}}</view>
+    </view>
+    <view class='share'>
+      <image src='{{weixin}}' class='wxLogo' mode='aspectFit'></image>
+      <view class='wxshare'>分享</view>
+    </view>
+  </view>
+</view>

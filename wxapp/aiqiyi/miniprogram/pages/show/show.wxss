@@ -1,1 +1,78 @@
 /* miniprogram/pages/show/show.wxss */
+.showPage {
+  width: 100%;
+}
+.showPage .video {
+  width: 100%;
+  height: 400rpx;
+}
+.showPage .btn {
+  width: 90%;
+  display: flex;
+  border-radius: 40px;
+  background: linear-gradient(45deg, #00FF50, #37DF6C);
+  margin: 20rpx auto;
+}
+.showPage .btn .img {
+  width: 50rpx;
+  height: 30rpx;
+  margin: auto 10rpx;
+  margin-left: 75rpx;
+}
+.showPage .btn .content {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.showPage .desc{
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  margin-left: 40rpx
+}
+.showPage .hot {
+  font-size:30rpx;
+  color:#999;
+  margin-left: 40rpx
+}
+.showPage .btnBox {
+  display: flex;
+  margin-top: 30rpx;
+}
+.star {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  display: flex;
+  margin: auto
+}
+.star .littleStar {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+.star .hotStar {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.share {
+  margin: auto;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #DDD;
+  border-radius: 42rpx;
+  display: flex;
+}
+ .share .wxLogo {
+  width: 40rpx;
+  height: 60rpx;
+  margin: auto 15rpx 20rpx;
+  float: left;
+  align-items: center
+}
+ .share .wxshare {
+  line-height: 60rpx;
+  font-size: 30rpx;
+}

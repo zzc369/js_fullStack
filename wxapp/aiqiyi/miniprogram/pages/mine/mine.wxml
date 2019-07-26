@@ -22,10 +22,10 @@
     </view>
     <!-- 这里是我赞过的视频 -->
     <scroll-view class="videoes" scroll-x="{{true}}">
-      <view class="video"  wx:for="{{videoes}}" wx:key="{{index}}">
-        <image class="coverImg" src="{{item.Videoes.image}}" mode="widthFix"></image>
-        <view class="duration">{{item.Videoes.duration}}</view>
-        <view class="desc">{{item.Videoes.description}}</view>
+      <view class="video" wx:for="{{videoes}}" wx:key="{{index}}">
+          <image class="coverImg" src="{{item.Videoes.image}}" mode="widthFix"></image>
+          <view class="duration">{{item.Videoes.duration}}</view>
+          <view class="desc">{{item.Videoes.description}}</view>
       </view>
     </scroll-view>
   </view>

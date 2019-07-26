@@ -1,0 +1,8 @@
+<!--miniprogram/pages/search/search.wxml-->
+<van-search
+  value="{{ value }}"
+  placeholder="{{placeholder}}"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+/>

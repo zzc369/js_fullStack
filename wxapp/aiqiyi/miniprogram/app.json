@@ -4,7 +4,8 @@
     "pages/mine/mine",
     "pages/hotspot/hotspot",
     "pages/ranking/ranking",
-    "pages/show/show"
+    "pages/show/show",
+    "pages/search/search"
   ],
   "window": {
     "backgroundColor": "#595456",
