@@ -3,7 +3,7 @@
   <!-- 风云榜头部的分类 -->
   <view class="ranking-header">
     <!-- 滑动的部分 -->
-    <scroll-view class="header" scroll-x="{{true}}">
+    <scroll-view class="header" scroll-x="{{true}}" scroll-left="{{scrollLeft}}">
       <view wx:for="{{headerList}}" wx:key="index" class="headerList {{currentIndex === index?'selected': ''}}" data-index="{{index}}" bindtap="selected">
         {{item}}
       </view>
@@ -14,20 +14,24 @@
     </view>
     <!-- 导航栏部分 -->
     <view wx:if="{{isShow}}" class="{{isShow ? 'header-sort opacity' : ''}}">
-      <view wx:for="{{headerList}}" wx:key="index" class='headerSort'  data-index="{{index}}" bindtap="selected">{{item}}</view>
+      <van-transition name="fade-down">
+        <view wx:for="{{headerList}}" wx:key="index" class='headerSort' data-index="{{index}}" bindtap="selected">
+          {{item}}
+        </view>
+      </van-transition>
     </view>
   </view>
   <!-- 下面的排行榜部分 -->
   <view class="ranking-container">
     <van-tabs active="{{ active }}" animated>
-      <!--热度榜  -->
+      <!-- 热度榜 -->
       <van-tab title="热度榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
           <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
-              <image src="{{item.img}}"  mode='aspectFill' class='image' />
+              <image src="{{item.img}}" mode='aspectFill' class='image' />
               <view class="list-number">{{index + 1}}</view>
               <view class="list-vip" wx:if="{{item.vip}}">VIP</view>
               <view class="list-count">{{item.count}}</view>
@@ -40,14 +44,14 @@
           </view>
         </view>
       </van-tab>
-      <!--飙升榜  -->
+      <!-- 飙升榜 -->
       <van-tab title="飙升榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
           <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
-              <image src="{{item.img}}"  mode='aspectFill' class='image' />
+              <image src="{{item.img}}" mode='aspectFill' class='image' />
               <view class="list-number">{{index + 1}}</view>
               <view class="list-vip" wx:if="{{item.vip}}">VIP</view>
               <view class="list-count">{{item.count}}</view>
@@ -60,14 +64,14 @@
           </view>
         </view>
       </van-tab>
-      <!--播放指数榜  -->
+      <!-- 播放指数榜 -->
       <van-tab title="播放指数榜">
         <!-- 包裹着一个影视信息的小盒子 -->
         <view class="ranking-content" wx:for="{{programs}}" wx:key="{{index}}">
           <view class="ranking-list" data-set="{{item}}" bindtap="navigate">
             <!-- 左边的图片部分 -->
             <view class="list-left">
-              <image src="{{item.img}}"  mode='aspectFill' class='image' />
+              <image src="{{item.img}}" mode='aspectFill' class='image' />
               <view class="list-number">{{index + 1}}</view>
               <view class="list-vip" wx:if="{{item.vip}}">VIP</view>
               <view class="list-count">{{item.count}}</view>

@@ -11,7 +11,6 @@ Page({
     videoes: []
   },
   bindgetuserinfo (e) {
-    console.log(e);
     this.setData({
       userAvatar: e.detail.userInfo.avatarUrl,
       isLogin: !this.data.isLogin,
@@ -27,14 +26,11 @@ Page({
       name: 'getVideo',
       data: {},
       success: function(res) {
-        console.log('mine-res',res);
         self.setData({
           videoes: res.result.data
         })
-        console.log("this.data.videoes",self.data.videoes)
       },
       fail: function(err) {
-        console.log('mine-err',err)
       }
     })
   },
@@ -55,14 +51,11 @@ Page({
       name: 'getVideo',
       data: {},
       success: function(res) {
-        console.log('mine-res',res);
         self.setData({
           videoes: res.result.data
         })
-        console.log("this.data.videoes",self.data.videoes)
       },
       fail: function(err) {
-        console.log('mine-err',err)
       }
     })
   },

@@ -1,5 +1,4 @@
 // miniprogram/pages/ranking/ranking.js
-
 Page({
 
   /**
@@ -9,12 +8,13 @@ Page({
     headerList: [],
     isShow: false,
     programs: [],
-    currentIndex: 0
+    currentIndex: 0,
+    name: [],
+    scrollLeft:100
   },
   navigate(e) {
     const dataSet = e.currentTarget.dataset.set;
     const item = JSON.stringify(dataSet);
-    console.log(item)
     wx.navigateTo({
       url: '../show/show?item=' + item
     })
@@ -25,7 +25,6 @@ Page({
     })
   },
   selected(e) {
-    console.log(e)
     let programs = [];
     this.setData({
       currentIndex: e.target.dataset.index,
@@ -41,7 +40,6 @@ Page({
         self.setData({
           programs : programs
         })
-        
       }
     })
   },
@@ -59,16 +57,14 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function(res) {
-        // const headerlist = res.data.data.list.name
         for (const ranking of res.data.data.ranking) {
           headerlist.push(ranking.name);
         }
         programs =res.data.data.ranking[self.data.currentIndex].TVInfo;
         self.setData({
           headerList: headerlist,
-          programs : programs
+          programs : programs,
         })
-        
       }
     })
   },

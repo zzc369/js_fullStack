@@ -21,7 +21,6 @@ Page({
   navigate(e) {
     const dataSet = e.currentTarget.dataset.set;
     const item = JSON.stringify(dataSet);
-    console.log(item)
     wx.navigateTo({
       url: '../show/show?item=' + item
     })
@@ -42,15 +41,12 @@ Page({
         name: 'first'
       },
       success: function(res) {
-        console.log(res)
         self.setData({
           imgUrl: res.result.data[0].first.Header,
           videoes: res.result.data[0].first.videoList
         })
-        console.log(self.data.videoes)
       },
       fail: function(err) {
-        console.log(err)
       }
     })
   },

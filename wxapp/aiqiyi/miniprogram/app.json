@@ -50,6 +50,8 @@
     "van-tab": "dist/tab/index",
     "van-tabs": "dist/tabs/index",
     "van-notify": "dist/notify/index",
-    "van-search": "dist/search/index"
+    "van-search": "dist/search/index",
+    "van-toast": "dist/toast/index",
+    "van-transition": "dist/transition/index"
   }
 }

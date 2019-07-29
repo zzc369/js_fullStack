@@ -14,7 +14,7 @@
           <image src='{{item.isLike ? likeStar : star}}' class='littleStar' mode='aspectFit'></image>
           <view class='hotStar'>{{item.star}}</view>
         </view>
-        <view class='share' bindtap="{{wxShare}}">
+        <view class='share' bindtap="wxShare">
           <image src='{{weixin}}' class='wxLogo' mode='aspectFit'></image>
           <view class='wxshare'>分享</view>
         </view>
@@ -22,4 +22,5 @@
     </view>
   </view>
   <van-notify id="van-notify" />
+  <van-toast id="van-toast" />
 </view>

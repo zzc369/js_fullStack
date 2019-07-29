@@ -1,5 +1,6 @@
 // miniprogram/pages/hotspot/hotspot.js
 import Notify from '../../dist/notify/notify'
+import Toast from '../../dist/toast/toast';
 Page({
 
   /**
@@ -40,11 +41,8 @@ Page({
         name: name
       },
       success: function (res) {
-        console.log('updateStar:', res)
-
       },
       fail: function (error) {
-        console.log('updateStar:', error)
       }
     });
   },
@@ -56,13 +54,11 @@ Page({
         name: name
       },
       success: function (res) {
-        // console.log('getData:' ,res)
         self.setData({
           entities: res.result.data[0].hotspot.videoes
         })
       },
       fail: function (error) {
-        console.log('getData:', error)
       }
     })
   },
@@ -75,10 +71,8 @@ Page({
         isAdd: isAdd,
       },
       success: function(res) {
-        console.log('res',res)
       },
       fail: function(err) {
-        console.log('err',err)
       }
     })
   },
@@ -99,7 +93,6 @@ Page({
         resolve('ok')
       })
       update.then(res => {
-        console.log(res)
       })
       self.cloudWXLike(index,entities[index],true)
     } else {
@@ -113,30 +106,14 @@ Page({
         resolve('ok')
       })
       update.then(res => {
-        console.log('res:', res)
       })
       self.cloudWXLike(index,entities[index],false)
     }
   },
   wxShare() {
-
+    Toast.success('本功能暂未开放！');
   },
   onLoad: function (options) {
-    // let entities = [];
-    // let self = this;
-    // wx.request({
-    //   url: 'https://www.easy-mock.com/mock/5ca466a713e4cf68f04a42f7/js_fullStack/iqiyi',
-    //   header: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   success: function(res) {
-    //     // console.log(res);
-    //     entities = res.data.data.hotspot.videoes;
-    //     self.setData({
-    //       entities
-    //     })
-    //   }
-    // })
     this.getData('hotspot');
   },
 

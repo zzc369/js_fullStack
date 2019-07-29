@@ -11,7 +11,6 @@ App({
     }
 
     this.globalData = {
-      wxLike:[]
     }
   }
 })

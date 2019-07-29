@@ -1,8 +1,26 @@
 <!--miniprogram/pages/search/search.wxml-->
-<van-search
-  value="{{ value }}"
-  placeholder="{{placeholder}}"
-  show-action
-  bind:search="onSearch"
-  bind:cancel="onCancel"
-/>
+<view class="search">
+  <van-search
+    class="vanSearch"
+    value="{{ value }}"
+    placeholder="{{placeholder}}"
+    show-action
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+    bind:change="onChange"
+  />
+  <!-- 这里是搜索到的结果 -->
+  <view class="results">
+    <view class="result" wx:for="{{result}}" wx:key="index" bindtap="navigate" data-name='{{item}}'>
+      <text  wx:for="{{item}}" class="{{item == value ? 'highlight' : 'normal' }}" wx:key="index">{{item}}</text>  
+    </view>
+  </view>
+  <!-- 搜索历史 -->
+  <view class="history">
+    <view class="title">{{historytitle}}</view>
+    <view class="delete" bindtap="deleteHistory">{{deleteHistory}}</view>
+  </view>
+  <view class="historyName" wx:for="{{historyName}}" wx:key="index">
+    <view class="name">{{item}}</view>
+  </view>
+</view>
