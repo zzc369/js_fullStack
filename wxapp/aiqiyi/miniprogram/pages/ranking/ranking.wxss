@@ -18,9 +18,9 @@
   white-space: nowrap;
   overflow-x: auto;
 }
-.header::-webkit-scrollbar {
+/* .header::-webkit-scrollbar {
   display: none;
-}
+} */
 .ranking .ranking-header .header .headerList {
   display: inline-block;
   margin: 0rpx 25rpx;

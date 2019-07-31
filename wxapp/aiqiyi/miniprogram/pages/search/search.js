@@ -66,21 +66,23 @@ Page({
     })
   },
   onChange(event) {
-    const list = this.data.allName;
-    const value = event.detail;
-    const result = []
-    if (event.detail !== '') {
-      let filter_list = [...new Set(
+    const list = this.data.allName;//这里是所有的名字
+    const value = event.detail; //实时获取输入框中的文字
+    const result = [] 
+    if (event.detail !== '') {//当输入框中有文字的话，就筛选出含有value的名字
+      let filter_list = [...new Set(//用Set是因为我的数据中有重复的字段
         list.filter(item => {
           return item.includes(value)
         })
       )]
-      filter_list.forEach(item => {
+      filter_list.forEach(item => {//遍历
+      // 将名字切割成三段放入数组中，和value一样的字段的就换个颜色
         let index1 = item.indexOf(value)
         let index2 = value.length
         let string1 = item.slice(0, index1)
         let string2 = item.slice(index1, index1 + index2)
         let string3 = item.slice(index1 + index2)
+        console.log([string1, string2, string3])
         result.push([string1,string2,string3])
       })
       this.setData({

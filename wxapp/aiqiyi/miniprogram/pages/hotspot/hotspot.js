@@ -20,11 +20,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   handleVideoPlay(e) {
-    if (this.data.currentVideo) {
-      this.data.currentVideo.pause();
+    if (this.data.currentVideo) {//currentVideo是当前播放的视频，初始值为null
+      this.data.currentVideo.pause();//如果存在currentVideo则停掉
     }
-    const Vid = e.target.id;
+    const Vid = e.target.id;//获取点击的视频的id
     if (Vid) {
+      // 创建 video 上下文 VideoContext 对象。
       const currentVideo = wx.createVideoContext(`${Vid}`);
       this.setData({
         currentVideo
